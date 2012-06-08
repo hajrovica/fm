@@ -1,0 +1,5 @@
+id,stavka,ukupan_iznos,procenat,prihod_stanovnik,grad,grupa_prihoda,tip_prihoda,godina,created,updated
+,Stavka1,12345,45,25000,Sarajevo,grupa1,tip1,2011,,
+,Stavka2,1234566,21,12500,Sarajevo,grupa2,tip1,2011,,
+,Stavka3,12345677,18,9500,Sarajevo,grupa3,tip2,2012,,
+,Stavka4,44444,12,2100,Sarajevo,grupa3,tip1,2012,,

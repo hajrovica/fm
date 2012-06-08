@@ -1,0 +1,27 @@
+[29-May-2012 17:35:30] PHP Fatal error:  Call to undefined method Prihodi::getOpcina() in /home/fiskalni/public_html/site/application/controllers/info.php on line 55
+[29-May-2012 19:50:36] PHP Fatal error:  Call to undefined method Prihodi::getOpcina() in /home/fiskalni/public_html/site/application/controllers/info.php on line 55
+[29-May-2012 19:50:54] PHP Fatal error:  Call to undefined method Prihodi::getOpcina() in /home/fiskalni/public_html/site/application/controllers/info.php on line 126
+[30-May-2012 01:30:44] PHP Fatal error:  Call to undefined method Prihodi::getOpcina() in /home/fiskalni/public_html/site/application/controllers/info.php on line 55
+[30-May-2012 08:13:37] PHP Fatal error:  Call to undefined method Prihodi::getOpcina() in /home/fiskalni/public_html/site/application/controllers/info.php on line 55
+[30-May-2012 08:13:44] PHP Fatal error:  Call to undefined method Prihodi::getOpcina() in /home/fiskalni/public_html/site/application/controllers/info.php on line 55
+[30-May-2012 12:14:46] PHP Fatal error:  Call to undefined method Prihodi::getOpcina() in /home/fiskalni/public_html/site/application/controllers/info.php on line 55
+[30-May-2012 12:16:28] PHP Fatal error:  Call to undefined method Prihodi::getOpcina() in /home/fiskalni/public_html/site/application/controllers/info.php on line 126
+[30-May-2012 12:41:08] PHP Fatal error:  Call to undefined method Prihodi::getOpcina() in /home/fiskalni/public_html/site/application/controllers/info.php on line 55
+[30-May-2012 15:38:30] PHP Fatal error:  Uncaught exception 'Exception' with message 'The table name does not exist. Please check you database and try again.' in /home/fiskalni/public_html/site/application/libraries/grocery_crud.php:3748
+Stack trace:
+#0 /home/fiskalni/public_html/site/application/libraries/grocery_crud.php(3335): grocery_CRUD->get_table()
+#1 /home/fiskalni/public_html/site/application/controllers/dashboard.php(88): grocery_CRUD->render()
+#2 /home/fiskalni/public_html/site/system/core/CodeIgniter.php(359): Dashboard->novosti()
+#3 /home/fiskalni/public_html/site/index.php(202): require_once('/home/fiskalni/...')
+#4 {main}
+  thrown in /home/fiskalni/public_html/site/application/libraries/grocery_crud.php on line 3748
+[30-May-2012 15:38:33] PHP Fatal error:  Uncaught exception 'Exception' with message 'The table name does not exist. Please check you database and try again.' in /home/fiskalni/public_html/site/application/libraries/grocery_crud.php:3748
+Stack trace:
+#0 /home/fiskalni/public_html/site/application/libraries/grocery_crud.php(3335): grocery_CRUD->get_table()
+#1 /home/fiskalni/public_html/site/application/controllers/dashboard.php(73): grocery_CRUD->render()
+#2 /home/fiskalni/public_html/site/system/core/CodeIgniter.php(359): Dashboard->opcine()
+#3 /home/fiskalni/public_html/site/index.php(202): require_once('/home/fiskalni/...')
+#4 {main}
+  thrown in /home/fiskalni/public_html/site/application/libraries/grocery_crud.php on line 3748
+[31-May-2012 14:07:17] PHP Fatal error:  Call to undefined function  anchor_popup_popup() in /home/fiskalni/public_html/site/application/views/includes/footer.php on line 32
+[04-Jun-2012 23:26:37] PHP Parse error:  syntax error, unexpected T_STRING in /home/fiskalni/public_html/site/application/views/includes/header.php on line 59
