@@ -88,9 +88,14 @@ if ($this->uri->segment(2)=='csv_import'): ?>
 
 
             <tbody>
-                <?php foreach ($csvData as $field): ?>
+                <?php
+                // echo "<pre>";
+                // print_r($csvData);
+
+                if ($this->uri->segment(3)=='prihodi'): ?>
+                    <?php foreach ($csvData as $field): ?>
                     <tr>
-                        <td><?php echo $field['id'] ?> - </td>
+                        <td><?php //echo $field['id'] ?> - </td>
                         <td><?php echo $field['stavka'] ?> </td>
                         <td><?php echo $field['ukupan_iznos'] ?> </td>
                         <td><?php echo $field['procenat'] ?> </td>
@@ -102,7 +107,26 @@ if ($this->uri->segment(2)=='csv_import'): ?>
                         <td><?php echo $field['entitet'] ?> </td>
 
                     </tr>
-                <?php endforeach ?>
+                    <?php endforeach ?>
+                <?php else: ?>
+
+                    <?php foreach ($csvData as $field): ?>
+                    <tr>
+                        <td><?php //echo $field['id'] ?> - </td>
+                        <td><?php echo $field['stavka'] ?> </td>
+                        <td><?php echo $field['ukupan_iznos'] ?> </td>
+                        <td><?php echo $field['procenat'] ?> </td>
+                        <td><?php echo $field['rashod_stanovnik'] ?> </td>
+                        <td><?php echo $field['grad'] ?> </td>
+                        <td><?php echo $field['grupa_rashoda'] ?> </td>
+                        <td><?php //echo $field['tip_prihoda'] ?> </td>
+                        <td><?php echo $field['godina'] ?> </td>
+                        <td><?php echo $field['entitet'] ?> </td>
+
+                    </tr>
+                    <?php endforeach ?>
+
+                <?php endif ?>
 
             </tbody>
         </table>

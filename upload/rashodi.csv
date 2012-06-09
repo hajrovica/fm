@@ -1,11 +1,10 @@
-﻿id;stavka;ukupan_iznos;procenat;rashod_stanovnik;grad;grupa_rashoda;godina;entitet;t
-1;Place i naknade troskova zaposlenih;5,770,166.82;16.37%;45.36;Zenica;TEKUCI RASHODI;2011;FBiH;
-2;Doprinosi poslodavca i ostali doprinosi;535,888.95;1.52%;4.21;Zenica;TEKUCI RASHODI;2011;FBiH;
-3;Izdaci za materijal, sitni inventar i usluge;12,116,717.72;34.37%;95.26;Zenica;TEKUCI RASHODI;2011;FBiH;
-4;Tekuci  transferi;9,108,244.69;25.83%;71.60;Zenica;TEKUCI RASHODI;2011;FBiH;
-5;Kapitalni transferi ;4,766,761.15;13.52%;37.47;Zenica;TEKUCI RASHODI;2011;FBiH;
-6;Izdaci za kamate ;134,075.86;0.38%;1.05;Zenica;TEKUCI RASHODI;2011;FBiH;
-7;Izdaci za nefinansijsku imovinu;1,274,786.67;3.62%;10.02;Zenica;KAPITALNI RASHODI;2011;FBiH;
-8;Budzetska rezerva;169,500.00;0.48%;1.33;Zenica;KAPITALNI RASHODI;2011;FBiH;
-9;Izdaci za finansijsku imovinu;1,380,565.05;3.92%;10.85;Zenica;OTPLATA DUGOVA;2011;FBiH;
-;;;;;;;;;
+﻿id;stavka;ukupan_iznos;procenat;rashod_stanovnik;grad;grupa_rashoda;godina;entitet;test;
+1;Plaće i naknade troškova zaposlenih;9050790.00;38.528%;147.1888569;Bihać;TEKUĆI RASHODI;2011;fbih;
+2;Doprinosi poslodavca i ostali doprinosi;826039.00;3.516%;13.43349433;Bihać;TEKUĆI RASHODI;2011;fbih;
+3;Izdaci za materijal, sitni inventar i usluge;2255831.00;9.603%;36.68554748;Bihać;TEKUĆI RASHODI;2011;fbih;
+4;Tekući  transferi;4486553.00;19.099%;72.96275878;Bihać;TEKUĆI RASHODI;2011;fbih;
+5;Kapitalni transferi ;265163.00;1.129%;4.312224553;Bihać;TEKUĆI RASHODI;2011;fbih;
+6;Izdaci za kamate ;667153.00;2.840%;10.84960401;Bihać;TEKUĆI RASHODI;2011;fbih;
+7;Izdaci za nefinansijsku imovinu;5939749.00;25.285%;96.59542047;Bihać;KAPITALNI RASHODI;2011;fbih;
+8;Budzetska rezerva;;0.000%;0;Bihać;KAPITALNI RASHODI;2011;fbih;
+9;Izdaci za finansijsku imovinu;;0.000%;0;Bihać;OTPLATA DUGOVA;2011;fbih;
