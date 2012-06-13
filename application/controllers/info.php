@@ -92,8 +92,8 @@ class Info extends MY_Controller {
         }
 
         //*************Hcharts ********************************************
-        $series_data[] = array('name'=>'Alastair', 'data'=>array(3,6,9));
-        $series_data[] = array('name'=>'Joane',  'data'=>array(1,9,7));
+        // $series_data[] = array('name'=>'Alastair', 'data'=>array(3,6,9));
+        // $series_data[] = array('name'=>'Joane',  'data'=>array(1,9,7));
 
         $this->view_data['series_data'] = json_encode($series_data);
         //***************************************************************

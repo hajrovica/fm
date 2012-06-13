@@ -19,7 +19,7 @@ jQuery(".sadrzaj").hide();
 
 </script>
 
-<div class="gry">
+<div class="wh">
   <h1 id="<?php echo $this->router->method; ?>">Rashodi</h1>
 
   <?php if ($this->session->flashdata('message')): ?>

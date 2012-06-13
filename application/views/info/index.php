@@ -2,8 +2,29 @@
 
 
 <div class="wh">
-    <h1 id="<?php echo $this->router->method; ?>">Gdje novac ide?</h1>
-    <div class="widgetgrid">
+
+    <?php
+
+    $prihodi = img(array(
+        'src'=>'images/assets/fm/prihodi.jpg',
+        // 'height'=>'385',
+        'class'=>'fade'
+
+        ));
+    $rashodi = img(array(
+        'src'=>'images/assets/fm/rashodi.jpg',
+        // 'height'=>'385',
+        'class'=>'fade'
+
+        ));
+    echo "<br><br clear=\"all\">";
+    echo anchor('prihodi', $prihodi);
+    echo nbs(3);
+    echo anchor('rashodi', $rashodi);
+
+     ?>
+
+<!--     <div class="widgetgrid">
 
 
     <br clear="all">
@@ -21,7 +42,7 @@
     </div>
 
 
-    </div>
+    </div> -->
 </div>
 
 <script type="text/javascript">
