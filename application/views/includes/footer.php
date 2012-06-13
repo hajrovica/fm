@@ -59,7 +59,7 @@
 
 
 
-<div class="gry" style="text-align: left; vertical-align: middle; margin:3px;">
+<div class="gry" style="text-align: left; vertical-align: middle; margin:0px; margin-top:3px;">
 
 <?php
 echo img(array('src'=>'images/assets/mfo.jpg'));

@@ -1,27 +1,21 @@
-<div class="gry">
+<?php $this->load->view('includes/right_div'); ?>
+<div class="wh" style="width:75%;">
 
 
     <div id="novosti">
 
-        <h1 id="<?php //echo $this->router->method; ?>">
-           <?php if ($this->uri->segment(2)) {
-                echo anchor('/novosti', 'Novosti') . " - " . $novosti[0]['naslov'];
-                $novosti[0]['naslov']=null;
-            }else{
-                echo "Novosti";
 
-            } ?>
-        </h1>
 
-        <hr class="sl" style="width:70%;">
+
 
         <br>
         <?php
         //echo $this->uri->segment(2);
 
         echo "<h2>" . $novosti[0]['naslov'] . "</h2>";
+         echo "<br>";
         echo $novosti[0]['text'];
-        echo "<br clear=\"all\">";
+        echo "<br><br>";
 
         //Remove First array item
         array_shift($novosti);

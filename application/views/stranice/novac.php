@@ -1,4 +1,4 @@
-<div class="gry">
+<div class="wh">
     <h1>Zašto bi nas budžet opštine trebao interesovati ?</h1>
     <br><br>
     Bez obzira da li ste penzioner, radite, studirate, ili ste nezaposleni.

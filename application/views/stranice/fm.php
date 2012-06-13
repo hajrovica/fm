@@ -1,5 +1,9 @@
-<div class="gry">
-    <h1 id="<?php echo $this->router->method; ?>">Fiskalni monitor</h1>
+<?php $this->load->view('includes/right_div'); ?>
+<div class="wh" style="width:75%;">
+
+
+
+
     <br>
     <p>
         <strong>Fiskalni monitor</strong> je servis koji prati prihode i rashode opština u BiH i građanima omogućava jednostavan, tačan i besplatan prikaz tokova novca u njihovim jedinicama lokalne samouprave.
@@ -25,3 +29,4 @@
         Pored toga, tematske analize pitanja od važnosti za cilj imaju dodatno educirati širu javnost o fiskalnoj politici i potaknuti diskusiju.
         Za sve ostale podatke, analize i drugo što biste željeli znati, potrebna nam je vaša podrška i aktivan doprinos. Imate informaciju ili konstruktivan prijedlog? Podijelite to s nama!</div>
     </p>
+</div>

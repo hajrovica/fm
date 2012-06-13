@@ -1,4 +1,5 @@
-<div class="content gry">
+<?php $this->load->view('includes/right_div'); ?>
+<div class="wh" style="width:75%;">
 <h1 id="<?php echo $this->router->method; ?>">Kontaktirajte nas</h1><br>
 
 <?php
@@ -29,7 +30,6 @@ else{
 
 
   ?>
-<br clear="all">
 
 
 
@@ -48,7 +48,7 @@ else{
         </p>
     </div>
 
-      <div class="" style="width:65%; clear:right; float:right; margin:7px;">
+      <div class="" style="width:60%; float:right; margin:7px;">
 
         <p>
             <?php  $this->load->view('stranice/_kontakt'); ?>
@@ -56,7 +56,8 @@ else{
         </p>
     </div>
 
-<br clear="all">
+
+
 
 
   <?php
@@ -68,3 +69,4 @@ else{
 ?>
 
 
+</div>

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Fiskalni monitor BiH</title>
 <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" />
+<?php echo link_tag('favicon.ico', 'shortcut icon', 'image/ico'); ?>
 <!--[if IE 9]>
     <link rel="stylesheet" media="screen" href="css/ie9.css"/>
 <![endif]-->
@@ -16,6 +17,9 @@
 <!--[if IE 7]>
     <link rel="stylesheet" media="screen" href="css/ie7.css"/>
 <![endif]-->
+
+<!-- Google fonts include  -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
@@ -44,12 +48,24 @@ foreach($css_files as $file): ?>
 <!-- GCRUD END -->
 
 
+
 <!--[if lt IE 9]>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
 <meta charset="UTF-8"></head>
 
 <body>
+
+<!-- FaceBok code include -->
+    <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+<!-- FaceBok code include END -->
 
     <!-- START OF HEADER -->
 
@@ -60,13 +76,61 @@ foreach($css_files as $file): ?>
             <img src="<?php echo base_url(); ?>images/assets/header.jpg" alt="header" />
             <div class="menu">
             <?php
-            echo anchor('', ' POČETNA ');
-            echo anchor('fm', ' FISKALNI MONITOR? ');
-            echo anchor('info', ' GDJE NOVAC IDE? ');
-            echo anchor('novosti', '  NOVOSTI ');
-            echo anchor('pojmovi', ' POJMOVI ');
-            echo anchor('onama', ' O NAMA ');
-            echo anchor('kontakt', ' KONTAKT  ');
+            //get current link
+            $linkseg = $this->uri->segment(1);
+            //decllare value for id
+            $currentLink = 'currentlink';
+
+            //define variables to prevent errrors
+            $home = null;
+            $fm = null;
+            $info = null;
+            $pojmovi = null;
+            $blog = null;
+            $onama = null;
+            $kontakt = null;
+
+            //build switch statement to declare values of variables
+            switch ($linkseg) {
+                case 'fiskalni%20monitor':
+                    $fm = $currentLink;
+                    break;
+
+                    case 'info':
+                        $info = $currentLink;
+                        break;
+
+                    case 'pojmovi':
+                        $pojmovi = $currentLink;
+                        break;
+
+
+                    case 'blog':
+                        $blog = $currentLink;
+                        break;
+
+                    case 'onama':
+                        $onama = $currentLink;
+                        break;
+
+                    case 'kontakt':
+                        $kontakt = $currentLink;
+                        break;
+
+                default:
+                    $home = $currentLink;
+                    break;
+            }
+
+
+            //build menu with id depending onprevious switch
+            echo anchor('', ' POČETNA ', array('id'=>$home));
+            echo anchor('fiskalni monitor', ' FISKALNI MONITOR? ', array('id'=>$fm));
+            echo anchor('info', ' GDJE NOVAC IDE? ' , array('id'=>$info));
+            echo anchor('pojmovi', ' POJMOVI ', array('id'=>$pojmovi));
+            echo anchor('blog', '  BLOG ', array('id'=>$blog));
+            echo anchor('onama', ' O NAMA ', array('id'=>$onama));
+            echo anchor('kontakt', ' KONTAKT  ', array('id'=>$kontakt));
 
 
             ?>

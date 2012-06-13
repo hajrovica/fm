@@ -40,7 +40,7 @@
 
 $route['default_controller'] = "stranice";
 $route['404_override'] = '';
-$route['fm'] = 'stranice/fm';
+$route['fiskalni(:any)monitor'] = 'stranice/fm';
 $route['pojmovi'] = 'stranice/pojmovi';
 $route['onama'] = 'stranice/onama';
 $route['kontakt'] = 'stranice/kontakt';
@@ -49,8 +49,8 @@ $route['login'] = 'auth/login';
 $route['logout'] = 'auth/logout';
 $route['prihodi'] = 'info/prihodi';
 $route['rashodi'] = 'info/rashodi';
-$route['novosti'] = 'info/novosti';
-$route['novosti/:num'] = 'info/novosti/';
+$route['blog'] = 'info/novosti';
+$route['blog/:num'] = 'info/novosti/';
 
 
 

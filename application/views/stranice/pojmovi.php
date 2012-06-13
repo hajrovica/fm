@@ -1,4 +1,5 @@
-<div class="content txt gry">
+<?php $this->load->view('includes/right_div'); ?>
+<div class="wh" style="width:75%;">
 <h1 id="<?php echo $this->router->method; ?>">POJMOVI U OBLASTI PRIHODA</h1>
     <hr class="sl" >
 <br><br>
@@ -132,6 +133,8 @@
 <br><br>
   <b>Izdaci za finansijsku imovinu</b><br>
   Ukljucuju izdatke pozajmljivanja drugim nivoima vlasti, pojedincima, neprofitnim organizacijama, privatnim preduzećima, javnim preduzećima, inostranstvu te izdatke za kupovinu dionica javnih i privatnih preduzeća.
+</div>
+
 </div>
 
 
