@@ -35,20 +35,28 @@ $blog = img(array(
     ));
 
     ?>
+    <!-- START ORANGE DIV BREADCRUMBS -->
+    <div class="orange" style="background-color:#e4653a;  color:#FFF; padding:3px; padding-left:7px; margin-left:11px;">
+        Vi ste ovdje: <strong> <?php echo nbs(3) . strtoupper($this->uri->segment(1)); ?></strong></div>
+    <!-- END ORANGE DIV -->
 
-    <div class="right" style="">
+
+    <?php
+    if (!$_POST) {
+        ?>
+            <div class="right" style="">
         <?php //echo anchor('#', $dImg); ?>
         <div style="height:3px; background-color:#FFF;"></div>
 
 
         <br>
         <?php
-        echo $blog;
+        echo anchor('blog', $blog);
         echo "<br>";
         echo "<strong>NOVOSTI <br>SA BLOGA</strong>";
         echo "<br>";
 
-        echo $istrazi;
+        echo anchor('info', $istrazi);
         echo "<br>";
         echo "<strong>ISTRAŽI</strong>";
         echo "<br>";
@@ -71,8 +79,11 @@ $blog = img(array(
 
     </div>
 
+
+
+        <?php
+    }
+
+     ?>
+
     <!-- END OF RIGHT DIV -->
-    <!-- START ORANGE DIV BREADCRUMBS -->
-    <div class="orange" style="background-color:#e4653a; width:80%; color:#FFF; padding:3px; padding-left:7px; margin-left:11px;">
-        Vi ste ovdje: <?php echo strtoupper($this->uri->segment(1)); ?></div>
-    <!-- END ORANGE DIV -->

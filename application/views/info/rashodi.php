@@ -18,9 +18,10 @@ jQuery(".sadrzaj").hide();
 });
 
 </script>
-
-<div class="wh">
-  <h1 id="<?php echo $this->router->method; ?>">Rashodi</h1>
+<?php $this->load->view('includes/right_div'); ?>
+<div class="wh" <?php if (!$_POST) {echo "style=\"width:75%;\"";} ?>>
+  <br> <br><h1>Rashodi</h1> <br> <h3>Pregledajte rashode opštine/grada </h3>
+  <br>
 
   <?php if ($this->session->flashdata('message')): ?>
   <br><div class="error"> <?=$this->session->flashdata('message')?> </div>
@@ -61,7 +62,7 @@ jQuery(".sadrzaj").hide();
   ?>
                  <div class="contenttitle radiusbottom0">
                       <h2 class="table"><span>Rashodi
-                          <?php echo " | Grad:".$this->input->post('grad')."-".$this->input->post('godina'); ?></span></h2>
+                          <?php echo " | Grad:". nbs(1) .$this->input->post('grad'). nbs(1) ."(".$this->input->post('godina'); ?>)</span></h2>
               </div>
 
               <table cellpadding="0" cellspacing="0" border="0" class="stdtable">
@@ -86,9 +87,9 @@ jQuery(".sadrzaj").hide();
                           <tr>
                               <th class="head0">&nbsp;&nbsp;&nbsp;</th>
                               <th class="head1">Stavka</th>
-                              <th class="head0">Ukupan iznos</th>
-                              <th class="head1">Procenat</th>
-                              <th class="head0">Rashod po stanovniku</th>
+                              <th class="head0">Ukupan iznos (KM)</th>
+                              <th class="head1">Procenat (%)</th>
+                              <th class="head0">Rashod po stanovniku (KM)</th>
 
                           </tr>
                       </thead>
@@ -142,7 +143,7 @@ jQuery(".sadrzaj").hide();
                       echo "</tbody>";
 
                       //create array of totals for graph
-                      $tot_values[]=$tot;
+                      //$tot_values[]=$tot;
                       $tot_stanovnik[]=$rash_stanovnik;
                       //calculate main table totals
                       $main_total += $tot;
@@ -151,9 +152,11 @@ jQuery(".sadrzaj").hide();
 
                       //release table part rendered for next group
                       $td_total = 0;
-
+                      $arr = "["."'".$group."'". "," .$tot . "]";
                       //pass data for graph like array (name  array data)
-                      $series_data[] = array('name'=>$group, 'data'=>$tot_values);
+                      //$series_data[] = array('name'=>$group, 'data'=>$tot_values);
+                      $series_data[] =$arr;
+
                       $series_stanovnik[] = array('name'=>$group, 'data'=>$tot_stanovnik);
 
                       } ?>
@@ -170,14 +173,15 @@ jQuery(".sadrzaj").hide();
               </tfoot>
           </table>
   <br clear="all">
+  <br>
   <div id="charts" style="text-align:center;">
     <!-- START CHARTS by total and  prihod_stanovnik -->
     <div id="cnt" style="float:left;">1!!!</div>
     <div id="cnt1" style="margin-left:470px;">1!!!</div>
     <!-- END CHARTS -->
 
-    <br clear="all">
-    <hr class="sl">
+
+    <hr>
     <br clear="all">
 
     <!-- START Informacije opstina i meni -->
@@ -199,16 +203,16 @@ jQuery(".sadrzaj").hide();
   </div>
   <br clear="all">
   <?php endif;
-  $this->view_data['series_data'] = json_encode($series_data);
+  //$this->view_data['series_data'] = json_encode($series_data);
   $this->view_data['series_stanovnik'] = json_encode($series_stanovnik);
 
 
   //Chart names
   $ch_title =$this->router->method . " - " . $this->input->post('grad');
   $ch_title =ucwords($ch_title);
-  //
-  $ch_title2 =/*$this->router->method . " - " . */$this->input->post('grad') . "- prihod po stanovniku";
-  $ch_title2 =ucwords($ch_title2);
+
+
+  $ch_title2 =/*$this->router->method . " - " . */"Rashod po stanovniku - " . $this->input->post('grad');
   //END chart names
   //
   //control printout for graph data
@@ -228,20 +232,78 @@ jQuery(".sadrzaj").hide();
 
 <!-- START JS HIGHCHARTS -->
 <!-- Call highchart params with passed values from table search -->
+
+
 <script type="text/javascript">
+
+
+var chart1; // globally available
 var chart2; // globally available
 
 jQuery(document).ready(function()
 {
 
+  chart1 = new Highcharts.Chart({
+     chart: {
+            renderTo: 'cnt',
+            type:'pie',
+            width:'600'
+
+         },
+         title: {
+            text: '<?php echo $ch_title; ?>'
+         },
+
+         tooltip: {
+                formatter: function() {
+                    return '<b>'+ this.point.name +'</b>: '+ this.point.y;
+                }
+              },
+
+
+
+          plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        formatter: function() {
+                            return '<b>'+ this.point.name +'</b> ';
+                        }
+                    }
+                }
+            },
+
+
+         series: [{
+
+            data: [
+           <?php
+            foreach ($series_data as $sdata => $value) {
+              echo $value .',';
+            }
+
+
+           ?>
+
+
+            ]
+         }]
+
+
+  });
+
   chart2 = new Highcharts.Chart({
      chart: {
-        renderTo: 'cnt',
+        renderTo: 'cnt1',
         type: 'bar',
-        width: '600'
+        width: '300'
      },
      title: {
-        text:'<?php echo $ch_title; ?>'
+        text: '<?php echo $ch_title2; ?>'
      },
      xAxis: {
         categories: [<?php echo $this->input->post('godina'); ?>]
@@ -251,14 +313,11 @@ jQuery(document).ready(function()
            text: ''
         }
      },
-      series: <?php echo $this->view_data['series_data']; ?>
+      series: <?php echo $this->view_data['series_stanovnik']; ?>
 
 
   });
 
 
-
-
 });
-
 </script>

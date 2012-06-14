@@ -1,6 +1,6 @@
 <?php $this->load->view('includes/right_div'); ?>
 <div class="wh" style="width:77%;">
-    <h1 id="<?php echo $this->router->method; ?>">O nama</h1>
+    <h1>O nama</h1>
     <br>
     O nama
     </p>

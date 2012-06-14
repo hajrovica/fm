@@ -1,7 +1,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-ui-1.8.16.custom.min.js"></script>
 
-
-<div class="wh">
+<?php $this->load->view('includes/right_div'); ?>
+<div class="wh" style="width:75%;">
 
     <?php
 
@@ -17,7 +17,7 @@
         'class'=>'fade'
 
         ));
-    echo "<br><br clear=\"all\">";
+    echo "<br><br>";
     echo anchor('prihodi', $prihodi);
     echo nbs(3);
     echo anchor('rashodi', $rashodi);

@@ -1,6 +1,6 @@
 <?php $this->load->view('includes/right_div'); ?>
 <div class="wh" style="width:75%;">
-<h1 id="<?php echo $this->router->method; ?>">Kontaktirajte nas</h1><br>
+<br>
 
 <?php
 
@@ -28,16 +28,24 @@ if (isset($sent_ok)) {
 }
 else{
 
+$img = img(array(
+            'src'=>'images/assets/info.png'
+
+
+            ));
+
+
+echo $img;
 
   ?>
 
 
-
+<br><br><br>
 
 <div class="one_third" style="margin:7px; padding:0px 0px 0px 1px">
-         <div class="contenttitle">
+
                         <h2 class="form"><span>Kontakt informacije</span></h2>
-        </div><!--contenttitle-->
+
         <p>
             <br>Projekat „Fiskalni monitor u BiH“ <br>
             Sarajevska škola za nauku i tehnologiju<br>

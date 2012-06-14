@@ -71,7 +71,10 @@ foreach($css_files as $file): ?>
 
     <div class="header">
         <div class="inner">
-            <img src="<?php echo base_url(); ?>images/assets/logo.jpg" alt="logo" />
+<a href="<?php echo base_url(); ?>">
+                <img src="<?php echo base_url(); ?>images/assets/logo.jpg" alt="logo" />
+
+</a>
             <?php echo nbs(1); ?>
             <img src="<?php echo base_url(); ?>images/assets/header.jpg" alt="header" />
             <div class="menu">
@@ -115,6 +118,14 @@ foreach($css_files as $file): ?>
 
                     case 'kontakt':
                         $kontakt = $currentLink;
+                        break;
+
+                    case 'prihodi':
+                        $info = $currentLink;
+                        break;
+
+                    case 'rashodi':
+                        $info = $currentLink;
                         break;
 
                 default:

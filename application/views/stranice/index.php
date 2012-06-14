@@ -19,7 +19,7 @@
 
         ));
 
-    echo anchor('novac', $gImg) . nbs(1) . anchor('#', $dImg);
+    echo anchor('novac', $gImg) . nbs(1) . anchor_popup('images/if.pdf', $dImg);
 
      ?>
 

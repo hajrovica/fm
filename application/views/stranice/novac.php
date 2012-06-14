@@ -1,4 +1,5 @@
-<div class="wh">
+<?php $this->load->view('includes/right_div'); ?>
+<div class="wh" style="width:75%;">
     <h1>Zašto bi nas budžet opštine trebao interesovati ?</h1>
     <br><br>
     Bez obzira da li ste penzioner, radite, studirate, ili ste nezaposleni.
@@ -10,7 +11,7 @@
     </div>
     <br>
     Poljoprivrednik državi plaća porez na dohodak u iznosu od 10%. Zaposleni plaćaju porez na platu u iznosu od 10%. Ukoliko kupite nekretninu, plaćate porez na imovinu u iznosu od 5%. Svakom kupovinom plaćate PDV od 17%.
-    <br clear="all"><br>
+    <br><br>
     <div class="notification msgalert">
         <p>
             <b>Porezi su dio naše svakodnevnice, a na njih često zaboravljamo.</b>
@@ -27,7 +28,7 @@
 
         </ol>
     </div>
-    <br clear="all">
+    <br>
     Ako ste nekada pomislili na nešto od navedenog, a pri tome ne znate kako se troši porez koji svakodnevno plaćate, zapitajte se kako se Vaš novac troši! Zato što (u skladu sa entitetskim zakonima o principima lokalne samouprave), između ostalog:<br>
 
     <div id="list2">

@@ -11,7 +11,7 @@
 
             ));
 
-        echo $img;
+        echo anchor('kontakt', $img);
     ?>
 
 </div>
@@ -24,7 +24,8 @@
                 $img = img(array(
                         'src'=>'images/assets/crnilogo.png',
                         'class'=>'icons',
-                        'style'=>'float:left;'
+                        'style'=>'float:left;',
+                        'valign'=>'middle'
 
 
                         ));
@@ -32,7 +33,7 @@
                     echo $img;
 
                 ?>
-        &copy; Copyright SSST 2011 <br> Sva prava pridržana.
+        <br>&copy; Copyright SSST 2011 <br> Sva prava pridržana.
         </div>
 
 

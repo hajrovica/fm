@@ -1,13 +1,14 @@
 
-                    <div class="contenttitle">
-                        <h2 class="form"><span>Posaljite nam kratku poruku</span></h2>
-                    </div><!--contenttitle-->
+                        <div style="text-align:center;">
+                            <h2 style="text-align:center;"><span>Vaša poruka</span></h2>
+                        </div>
+
 
                     <br />
 
                     <form id="form1" class="stdform" method="post" action="">
                         <p>
-                            <label>Ime</label>
+                            <label>Ime *</label>
                             <span class="field"><input type="text" name="name" id="name" class="longinput" /></span>
                         </p>
 
@@ -17,20 +18,21 @@
                         </p> -->
 
                         <p>
-                            <label>Email</label>
+                            <label>E-mail *</label>
                             <span class="field"><input type="text" name="email" id="email" class="longinput" /></span>
                         </p>
 
                         <p>
-                            <label>Poruka</label>
+                            <label>Poruka *</label>
                             <span class="field"><textarea cols="80" rows="5" name="poruka" class="mediuminput" id="poruka"></textarea></span>
+                            <div style="text-align:center;"> <button class="submit radius2">Pošalji</button></div>
                         </p>
 
 
                         <br />
 
                         <p class="stdformbutton">
-                            <button class="submit radius2">Pošalji</button>
+
                         </p>
                     </form>
                     <br clear="all" /><br />
