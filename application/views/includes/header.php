@@ -67,6 +67,16 @@ foreach($css_files as $file): ?>
         }(document, 'script', 'facebook-jssdk'));</script>
 <!-- FaceBok code include END -->
 
+    <!-- Define icons for social -->
+<?php
+    $fb = img(array('src'=>'images/assets/facebook_icon.png'));
+    $tw = img(array('src'=>'images/assets/twitter_icon.png'));
+    $mail = img(array('src'=>'images/assets/mail_icon.png'));
+
+     ?>
+
+    <!-- Define icons for socialEND -->
+
     <!-- START OF HEADER -->
 
     <div class="header">
@@ -77,7 +87,18 @@ foreach($css_files as $file): ?>
 </a>
             <?php echo nbs(1); ?>
             <img src="<?php echo base_url(); ?>images/assets/header.jpg" alt="header" />
+
+              <div class="social">
+                 <?php
+                    echo anchor_popup('#', $fb);
+                    echo anchor_popup('#', $tw);
+                    echo anchor_popup('#', $mail);
+                ?>
+
+              </div>
+
             <div class="menu">
+
             <?php
             //get current link
             $linkseg = $this->uri->segment(1);

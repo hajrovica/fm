@@ -43,9 +43,12 @@
 
         <div class="one_third last">
             <?php
+
             $fb = img(array('src'=>'images/assets/facebook_icon.png'));
             $tw = img(array('src'=>'images/assets/twitter_icon.png'));
             $mail = img(array('src'=>'images/assets/mail_icon.png'));
+
+
 
              echo anchor_popup('#', $fb);
              echo anchor_popup('#', $tw);

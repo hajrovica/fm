@@ -1233,7 +1233,7 @@ padding: 3px;
 .menu{
 	float: right;
 	display: block;
-	margin: 80px 0px 0px 0px;
+	margin: 11px 0px 0px 0px;
 
 }
 .menu a{
@@ -1270,6 +1270,11 @@ padding: 3px;
 }
 
 .gry img{
+	vertical-align: middle; margin: 3px;
+
+}
+
+.social img{
 	vertical-align: middle; margin: 3px;
 
 }
@@ -1324,3 +1329,10 @@ min-height:700px;
       opacity: 0.75;
 
       }
+
+  .social{
+
+  	float:right;
+  	margin: 11px;
+  	padding: 3px;
+  }
