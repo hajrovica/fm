@@ -44,9 +44,9 @@
         <div class="one_third last">
             <?php
 
-            $fb = img(array('src'=>'images/assets/facebook_icon.png'));
-            $tw = img(array('src'=>'images/assets/twitter_icon.png'));
-            $mail = img(array('src'=>'images/assets/mail_icon.png'));
+            $fb = img(array('src'=>'images/assets/facebook_icon.png','height'=>'40px'));
+            $tw = img(array('src'=>'images/assets/twitter_icon.png','height'=>'40px'));
+            $mail = img(array('src'=>'images/assets/mail_icon.png','height'=>'40px'));
 
 
 
@@ -76,7 +76,7 @@ echo img(array('src'=>'images/assets/mfo.jpg'));
     echo " | ";
     echo anchor_popup('http://www.analitika.ba', 'www.analitika.ba');
     echo " | ";
-    echo anchor_popup('http://www.fiskalnimonitor.rs/index-februar.php', 'Fiskalni monitor');
+    echo anchor_popup('http://www.fiskalnimonitor.rs/index-februar.php', 'Fiskalni monitor u Srbiji');
     //echo " | ";
 
 ?>

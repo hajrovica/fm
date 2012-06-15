@@ -1,6 +1,6 @@
 <?php $this->load->view('includes/right_div'); ?>
 <div class="wh" style="width:75%;">
-<h1>POJMOVI U OBLASTI PRIHODA</h1>
+<h2>Pojmovi u oblasti prihoda</h2>
     <hr class="sl" >
 <br><br>
 <h3>POJMOVI U OBLASTI PRIHODA</h3>

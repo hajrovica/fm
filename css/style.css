@@ -1293,6 +1293,18 @@ padding: 3px;
 	padding: 11px;
 }
 
+.wh p{
+text-align:justify;
+
+}
+
+.wh ul{
+	margin: 7px 7px 7px 21px;
+	display:block;
+	list-style-type: none;
+
+}
+
 .icons{
 	vertical-align: top;
 	margin: 3px;
@@ -1307,7 +1319,7 @@ padding: 3px;
 
 	width:20%;
 	float:right;
-	min-height:400px;
+	min-height:300px;
 	clear: right;
 
 }
@@ -1336,3 +1348,5 @@ min-height:700px;
   	margin: 11px;
   	padding: 3px;
   }
+
+
