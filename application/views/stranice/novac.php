@@ -2,16 +2,17 @@
 <?php $this->load->view('includes/right_div'); ?>
 <div class="wh" style="width:75%;">
     <h2>Zašto bi nas budžet opštine trebao interesovati?</h2>
-        <p><br>
-        Bez obzira da li ste penzioner, radite, studirate, ili ste nezaposleni.
-        <br>
-        Svi plaćamo porez.
-        <br><br>
-        Poljoprivrednik državi plaća porez na dohodak u iznosu od 10%. Zaposleni plaćaju porez na platu u iznosu od 10%. Ukoliko kupite nekretninu, plaćate porez na imovinu u iznosu od 5%. Svakom kupovinom plaćate PDV od 17%.
-        <br><br>
-        Porezi su dio naše svakodnevnice, a na njih često zaboravljamo.
-<br>
-<br>
+        <br><p style="text-align:center;  font-family: PT Sans Narrow; font-size:19px;">
+            Bez obzira da li ste penzioner, radite, studirate, ili ste nezaposleni.  Svi plaćamo porez.<br>
+                        Poljoprivrednik državi plaća porez na dohodak u iznosu od 10%. Zaposleni plaćaju porez na platu u iznosu od 10%. Ukoliko kupite nekretninu, plaćate porez na imovinu u iznosu od 5%. Svakom kupovinom plaćate PDV od 17%.
+                        Porezi su dio naše svakodnevnice, a na njih često zaboravljamo.
+
+
+
+        </p><br>
+
+        <p>
+
 <b>Smeta vam:</b></p>
 
 <ul>
@@ -51,13 +52,16 @@
 </p>
 <br><br>
 
-    <h3>Zato, tiče vas se kako se vaš novac troši!</h3>
+    <h3>Tiče vas se kako se vaš novac troši!</h3>
 <br>
     <p>
         Fiskalni monitor vam to omogućava. Na jednom mjestu provjerite prihode i rashode opština, uporedite opštine i  provjerite kako Vaša opština kotira u odnosu na ostale (ili provjerite kako Vaša opština troši novce u odnosu na ostale). Informirajte se o budžetiranju i pratite analize
         vrsnih stučnjaka.<br><br>
 
-        Ako ovo čitate, već ste učinili prvi korak. Nemojte da ostane samo na tome. Šaljite nam svoje sugestije, uključite se u argumentovanu diskusiji na Facebooku i Twitteru. Doprinesite transparentnosti opština i gradova u BiH i tako dajte svoj doprinos kroz pozivanje na odgovornost trošenja budžeta.
-<br><br>
-        U konačnici, doprinestite razvoju naše BiH.</p>
+        </p>
+
+       <p style="text-align:center;  font-family: PT Sans Narrow; font-size:19px;">
+                    Ako ovo čitate, već ste učinili prvi korak. Nemojte da ostane samo na tome. <br>Šaljite nam svoje sugestije, uključite se u argumentovanu diskusiji na Facebooku i Twitteru. Doprinesite transparentnosti opština i gradova u BiH i tako dajte svoj doprinos kroz pozivanje na odgovornost trošenja budžeta.
+
+        </p>
 </div>

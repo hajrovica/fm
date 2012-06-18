@@ -69,9 +69,9 @@ foreach($css_files as $file): ?>
 
     <!-- Define icons for social -->
 <?php
-    $fb = img(array('src'=>'images/assets/facebook_icon.png','height'=>'40px'));
-    $tw = img(array('src'=>'images/assets/twitter_icon.png','height'=>'40px'));
-    $mail = img(array('src'=>'images/assets/mail_icon.png','height'=>'40px'));
+    $fb = img(array('src'=>'images/assets/facebook_icon.png','height'=>'40px', 'class'=>'fade'));
+    $tw = img(array('src'=>'images/assets/twitter_icon.png','height'=>'40px', 'class'=>'fade'));
+    $mail = img(array('src'=>'images/assets/mail_icon.png','height'=>'40px', 'class'=>'fade'));
 
      ?>
 

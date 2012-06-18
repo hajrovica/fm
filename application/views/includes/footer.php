@@ -44,9 +44,9 @@
         <div class="one_third last">
             <?php
 
-            $fb = img(array('src'=>'images/assets/facebook_icon.png','height'=>'40px'));
-            $tw = img(array('src'=>'images/assets/twitter_icon.png','height'=>'40px'));
-            $mail = img(array('src'=>'images/assets/mail_icon.png','height'=>'40px'));
+            $fb = img(array('src'=>'images/assets/facebook_icon.png','height'=>'40px', 'class'=>'fade'));
+            $tw = img(array('src'=>'images/assets/twitter_icon.png','height'=>'40px', 'class'=>'fade'));
+            $mail = img(array('src'=>'images/assets/mail_icon.png','height'=>'40px', 'class'=>'fade'));
 
 
 
@@ -68,15 +68,15 @@
 <?php
 echo img(array('src'=>'images/assets/mfo.jpg'));
 
-    echo anchor_popup('http://www.budzet.ba/', 'www.budzet.ba');
+    echo anchor_popup('http://www.budzet.ba/', strtoupper('budzet.ba'), array('class'=>'ftrlnk'));
     echo " | ";
-    echo anchor_popup('http://www.javnefinansije.ba/', 'javnefinansije.ba');
+    echo anchor_popup('http://www.javnefinansije.ba/', strtoupper('javnefinansije.ba'), array('class'=>'ftrlnk'));
     echo " | ";
-    echo anchor_popup('http://www.cci.ba', 'www.cci.ba');
+    echo anchor_popup('http://www.cci.ba', strtoupper('cci.ba'), array('class'=>'ftrlnk'));
     echo " | ";
-    echo anchor_popup('http://www.analitika.ba', 'www.analitika.ba');
+    echo anchor_popup('http://www.analitika.ba', strtoupper('analitika.ba'), array('class'=>'ftrlnk'));
     echo " | ";
-    echo anchor_popup('http://www.fiskalnimonitor.rs/index-februar.php', 'Fiskalni monitor u Srbiji');
+    echo anchor_popup('http://www.fiskalnimonitor.rs/index-februar.php', strtoupper('Fiskalni monitor u Srbiji'), array('class'=>'ftrlnk'));
     //echo " | ";
 
 ?>

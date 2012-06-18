@@ -62,13 +62,16 @@ $ic4 = img(array(
 
 <div class="gry">
     <div class="one_third">
-        <br><?php echo $ic1; ?>
+        <br><?php echo anchor('info', $ic1); ?>
         <div>
             <h4>ISTRAŽI</h4>
             <br>
             <hr>
-            <?php echo $ic4; ?>
-               Pregledaj strukturu prihoda i rashoda, saznaj kako se ubiru prihodi i kako se troši tvoj novac u opštinama i gradovima. Analiziraj razlike u trošenju novca i rangiraj troškove opština i gradova na osnovu različitih budžetskih stavki.
+
+               <p>
+                <h4>Gdje novac ide?</h4>
+                <?php echo anchor('info', $ic4); ?>
+                Pregledaj strukturu prihoda i rashoda, saznaj kako se ubiru prihodi i kako se troši tvoj novac u opštinama i gradovima. Analiziraj razlike u trošenju novca i rangiraj troškove opština i gradova na osnovu različitih budžetskih stavki.</p>
 
         </div>
 
