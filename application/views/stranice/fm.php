@@ -4,7 +4,7 @@
 <br>
     <p>
          je servis koji prati prihode i rashode opština u BiH i građanima omogućava jednostavan prikaz tokova novca u njihovim jedinicama lokalne samouprave.
-        <br>br
+        <br>
         Ciljevi inicijative su objediniti javne podatke kroz jedinstvenu platformu, informisanje šire javnosti o izvršenju budžeta na lokalnom nivou i podizanje građanske svijesti o značaju transparentnog budžetiranja.
         <br>
         <br>

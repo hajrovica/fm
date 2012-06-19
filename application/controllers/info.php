@@ -80,9 +80,9 @@ class Info extends MY_Controller {
             $rnd .="<tr>";
             $rnd .="<td>&nbsp;</td>";
             $rnd .="<td>".$record['stavka']."</td>";
-            $rnd .="<td>".$record['ukupan_iznos']."</td>";
-            $rnd .="<td>".$record['procenat']."</td>";
-            $rnd .="<td>".$record['prihod_stanovnik']."</td>";
+            $rnd .="<td>".number_format($record['ukupan_iznos'], $decimals=2, $dec_point = '.', $thousands_sep = ',')."</td>";
+            $rnd .="<td>".number_format($record['procenat'], $decimals=2, $dec_point = '.', $thousands_sep = ',')."</td>";
+            $rnd .="<td>".number_format($record['prihod_stanovnik'], $decimals=2, $dec_point = '.', $thousands_sep = ',')."</td>";
             $rnd .="</tr>";
 
 
@@ -154,12 +154,14 @@ class Info extends MY_Controller {
             $rnd .="<tr class=\"$group\">";
             $rnd .="<td>&nbsp;</td>";
             $rnd .="<td>".$record['stavka']."</td>";
-            $rnd .="<td>".$record['ukupan_iznos']."</td>";
-            $rnd .="<td>".$record['procenat']."</td>";
-            $rnd .="<td>".$record['rashod_stanovnik']."</td>";
+            $rnd .="<td>".number_format($record['ukupan_iznos'], $decimals=2, $dec_point = '.', $thousands_sep = ',')."</td>";
+            $rnd .="<td>".number_format($record['procenat'], $decimals=2, $dec_point = '.', $thousands_sep = ',')."</td>";
+            $rnd .="<td>".number_format($record['rashod_stanovnik'], $decimals=2, $dec_point = '.', $thousands_sep = ',')."</td>";
             $rnd .="</tr>";
 
             return $rnd;
+            //echo $this->view_data['rnd'] = $rnd;
+
 
 
         }

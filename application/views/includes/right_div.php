@@ -68,7 +68,7 @@ $blog = img(array(
 
         echo $dogadjaj;
         echo "<br>";
-        echo "<strong>PREDSTOJEĆI <br>DOGAĐAJI</strong>";
+        echo "<strong>DOGAĐAJI</strong>";
         echo "<br>";
 
 

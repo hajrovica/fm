@@ -33,7 +33,7 @@
                     echo $img;
 
                 ?>
-        <br>&copy; Copyright SSST 2011 <br> Sva prava pridržana.
+        <br>&copy; Copyright SSST 2012 <br> Sva prava pridržana.
         </div>
 
 
@@ -77,6 +77,8 @@ echo img(array('src'=>'images/assets/mfo.jpg'));
     echo anchor_popup('http://www.analitika.ba', strtoupper('analitika.ba'), array('class'=>'ftrlnk'));
     echo " | ";
     echo anchor_popup('http://www.fiskalnimonitor.rs/index-februar.php', strtoupper('Fiskalni monitor u Srbiji'), array('class'=>'ftrlnk'));
+    echo " | ";
+    echo anchor_popup('http://www.fiskalenmonitor.mk', strtoupper('Fiskalni monitor u makedoniji'), array('class'=>'ftrlnk'));
     //echo " | ";
 
 ?>

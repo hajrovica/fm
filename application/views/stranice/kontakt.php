@@ -44,7 +44,7 @@ echo $img;
 
 <div class="one_third" style="margin:7px; padding:0px 0px 0px 1px">
 
-                        <h2 class="form"><span>Kontakt informacije</span></h2>
+                        <h2 class="form">Kontakt informacije</h2>
 
         <p>
             <br>Projekat „Fiskalni monitor u BiH“ <br>

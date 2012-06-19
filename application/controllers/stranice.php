@@ -21,10 +21,19 @@ public function __construct()
         //call predefined view
         $this->_outpt('stranice/fm');
     }
+
+
     function novac(){
       $this->_outpt('stranice/novac');
 
     }
+
+
+    function ifgraph(){
+      $this->_outpt('stranice/if');
+
+    }
+
 
     public function onama()
     {

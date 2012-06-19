@@ -19,7 +19,7 @@
 
         ));
 
-    echo anchor('novac', $gImg) . nbs(1) . anchor_popup('images/if.pdf', $dImg);
+    echo anchor('novac', $gImg) . nbs(1) . anchor('stranice/ifgraph', $dImg);
 
      ?>
 
@@ -71,7 +71,9 @@ $ic4 = img(array(
                <p>
                 <h4>Gdje novac ide?</h4>
                 <?php echo anchor('info', $ic4); ?>
-                Pregledaj strukturu prihoda i rashoda, saznaj kako se ubiru prihodi i kako se troši tvoj novac u opštinama i gradovima. Analiziraj razlike u trošenju novca i rangiraj troškove opština i gradova na osnovu različitih budžetskih stavki.</p>
+                Pregledaj strukturu prihoda i rashoda, saznaj kako se ubiru prihodi i kako se troši tvoj novac u opštinama i gradovima. Analiziraj razlike u trošenju novca i rangiraj troškove opština i gradova na osnovu različitih budžetskih stavki.
+                 <?php  echo anchor('info', 'Počni istraživati ...[') ?>
+            </p>
 
         </div>
 
@@ -94,7 +96,7 @@ Kao rezultat istraživačkog projekta “Procjena budžetske transparentnosti u 
     <div class="one_third last">
         <br><?php echo $ic3; ?>
         <div>
-                <h4>PREDSTOJEĆI DOGAĐAJI</h4><br><hr>
+                <h4>DOGAĐAJI</h4><br><hr>
 
          <ul class="activitylist">
         <li class="alert"><a href=""><b><i>Utorak 5.6.2012 u 17:00 sati</i></b><br>

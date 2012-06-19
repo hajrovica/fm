@@ -1,3 +1,58 @@
+<style type="text/css">
+
+/*  Table design*/
+#background-image
+{
+    font-family: "PT Sans Narrow",  "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 15px;
+    margin: 45px;
+    width: 75%;
+    text-align: left;
+    border-collapse: collapse;
+    background: url('<?php echo base_url(); ?>images/assets/crnilogo.png') 90% 80% no-repeat;
+}
+#background-image th
+{
+    padding: 12px;
+    font-weight: normal;
+    font-size: 15px;
+    /*color: #339;*/
+    color: #000;
+}
+#background-image td
+{
+    padding: 9px 12px;
+    /*color: #669;*/
+    color: #2A2A2A;
+    border-top: 1px solid #fff;
+}
+#background-image tfoot td
+{
+    font-size: 11px;
+}
+#background-image tbody td
+{
+    background: url('<?php echo base_url(); ?>images/table-images/back.png');
+}
+* html #background-image tbody td
+{
+    /*
+       ----------------------------
+        PUT THIS ON IE6 ONLY STYLE
+        AS THE RULE INVALIDATES
+        YOUR STYLESHEET
+       ----------------------------
+    */
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='<?php echo base_url(); ?>table-images/back.png',sizingMethod='crop');
+    background: none;
+}
+#background-image tbody tr:hover td
+{
+    color: #339;
+    background: none;
+}
+
+</style>
 
 <script type="text/javascript">
 jQuery(document).ready(function() {
@@ -134,12 +189,14 @@ jQuery(".sadrzaj").hide();
                       $td_total .="<tr class=\"$group"." total\">";
                       //$td_total .="<td>!!!!</td>";
                       $td_total .="<td colspan=\"2\"><h4>Total:</h4></td>";
-                      $td_total .="<td><h4>".$tot."</h4></td>";
-                      $td_total .="<td><h4>".$procenat."</h4></td>";
-                      $td_total .="<td><h4>".$prih_stanovnik."</h4></td>";
+                      $td_total .="<td><h4>".number_format($tot, $decimals=2, $dec_point = '.', $thousands_sep = ',')."</h4></td>";
+                      $td_total .="<td><h4>".number_format($procenat,  $decimals=2, $dec_point = '.', $thousands_sep = ',')."</h4></td>";
+                      $td_total .="<td><h4>".number_format($prih_stanovnik,  $decimals=2, $dec_point = '.', $thousands_sep = ',')."</h4></td>";
                       $td_total .="</tr>";
                       echo $td_total;
                       echo "</tbody>";
+
+
 
                       //create array of totals for graph
                       //$tot_values[]=$tot;
@@ -164,14 +221,16 @@ jQuery(".sadrzaj").hide();
                   <tr>
                       <th class="head0">&nbsp;</th>
                       <th class="head1">Ukupno</th>
-                      <th class="head0">Total:<?php echo $main_total; ?></th>
-                      <th class="head1"><?php echo $main_proc; ?></th>
-                      <th class="head0"><?php echo $main_ps; ?></th>
+                      <th class="head0">Total:<?php echo number_format($main_total, $decimals=2, $dec_point = '.', $thousands_sep = ','); ?></th>
+                      <th class="head1"><?php echo number_format($main_proc,  $decimals=2, $dec_point = '.', $thousands_sep = ','); ?></th>
+                      <th class="head0"><?php echo number_format($main_ps,  $decimals=2, $dec_point = '.', $thousands_sep = ','); ?></th>
 
                   </tr>
               </tfoot>
           </table>
   <br clear="all"> <br>
+
+
   <div id="charts" style="text-align:center;">
     <!-- START CHARTS by total and  prihod_stanovnik -->
     <div id="cnt" style="float:left;">1!!!</div>
@@ -185,9 +244,9 @@ jQuery(".sadrzaj").hide();
     <!-- START Informacije opstina i meni -->
     <div class="one_half">
       <?php foreach ($opcina_arr as $opcine => $value):?>
-      <h3>Informacije o opštini <?php echo $value->opcina; ?></h3>
+      <h3>Informacije o  <?php echo $value->opcina; ?></h3>
         <p>
-          <b> <?php echo $value->info; ?> </b>
+          <?php echo $value->info; ?>
         </p>
       <?php endforeach ?>
 
@@ -197,7 +256,65 @@ jQuery(".sadrzaj").hide();
     <div class="one_half last">
       <h3>Nastavi istraživati</h3>
     </div>
-    <!-- END informacije -->
+   <?php
+
+
+
+   echo form_open('rashodi', array('name'=>'istrazi', 'class'=>'stdform'));
+
+   echo form_hidden('grad', $this->input->post('grad'));
+   echo form_hidden('godina', $this->input->post('godina'));
+   ?>
+
+            <table id="background-image" style="width:50%;">
+
+
+            <tbody>
+            <tr>
+            <td>Pregledaj rashode za istu opštinu/grad:</td>
+            <td> <?php echo form_submit('istrazi', 'Istraži'); ?></td>
+
+
+
+            </tr>
+
+            <tr>
+            <td>Uporedi opštine/gradove prema rashodima</td>
+            <td> </td>
+            </tr>
+
+            <tr>
+            <td>Rangiraj opštine/gradove</td>
+            <td> </td>
+            </tr>
+
+            <tr>
+            <td>Pregledaj tokove novca za drugu opštinu/grad</td>
+            <td> </td>
+            </tr>
+
+             <tr>
+            <td>Vidi tumačenje pojmova:</td>
+            <td> <?php echo anchor('pojmovi', 'Vidi'); ?></td>
+
+
+
+            </tr>
+
+
+
+            </tbody>
+            </table>
+
+
+
+   <?php
+
+
+
+   echo form_close();
+    ?>
+
   </div>
   <br clear="all">
   <!-- $series_data[] = array('name'=>'Alastair', 'data'=>array(3,6,9)); -->
@@ -255,7 +372,7 @@ jQuery(document).ready(function()
 
          tooltip: {
                 formatter: function() {
-                    return '<b>'+ this.point.name +'</b>: '+ this.point.y;
+                    return '<b>'+ this.point.name +'</b>: '+ Highcharts.numberFormat(this.point.y, 2, '.', ',');
                 }
               },
 

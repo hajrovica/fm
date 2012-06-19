@@ -20,7 +20,7 @@
 
 
         <?php
-        echo anchor('#', $dImg);
+        echo anchor('stranice/ifgraph', $dImg);
 
 
          ?>

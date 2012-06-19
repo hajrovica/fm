@@ -1,6 +1,6 @@
 
                         <div style="text-align:center;">
-                            <h2 style="text-align:center;"><span>Vaša poruka</span></h2>
+                            <h2 style="text-align:center;">Vaša poruka</h2>
                         </div>
 
 

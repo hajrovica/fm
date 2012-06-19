@@ -59,6 +59,17 @@
         O nama
     </h2>
     <br>
+
+<p>Fiskalni monitor je regionalna inicijativa za transparentnost i odgovornost jedinica lokalne samouprave u zemaljama Balkana, koja se realizuje u cilju podizanja građanske svijesti o značaju transparentnog budžetiranja.
+
+    Inicijativa se trenutno implementira u Srbiji, Makedoniji i Bosni i Hercegovini.<br><br>
+    Fiskalni monitor u BiH je servis koji prati prihode i rashode opština u BiH i građanima omogućava jednostavan prikaz tokova novca u jedinicama lokalne samouprave. Ciljevi inicijative su objediniti javne podatke kroz jedinstvenu platformu, informisati širu javnost o izvršenju budžeta na lokalnom nivou i ojačati građansku svijest o značaju transparentnog budžetiranja.
+<br><br>
+    U prvoj fazi objavljujemo budžetske podatke devet opština u BiH koje su nam dostavile relevantne informacije. Tim Fiskalnog monitora u BiH će nastaviti kontinuirano prikupljati budžetske podatke ostalih opština i gradova u BiH i objavljivati ih široj javnosti.
+<br>
+<br>
+    Fiskalni monitor u BiH implementira <?php echo anchor_popup('http://ssst.edu.ba', 'Sarajevska škola za nauku i tehnologiju.') ?>.</p>
+
     <p>
 
 
@@ -102,7 +113,7 @@
         <tr>
 
             <td>Tarik Mehmedović</td>
-            <td> </td>
+            <td>Građani BiH </td>
 
         </tr>
 
@@ -111,8 +122,19 @@
             <td>Nejra Čekić</td>
             <td> </td>
         </tr>
+          <tr>
+
+            <td>Članovi studentske organizacije ENTER SSST</td>
+            <td> </td>
+        </tr>
 
     </tbody>
 </table>
-    </p>
 
+
+    </p>
+<p>
+    Posjetite stranice ostalih inicijativa zemalja u regionu: <?php echo anchor_popup('http://www.fiskalnimonitor.rs', 'Fiskalni monitor u Srbiji'); ?> |
+ <?php echo anchor_popup('http://www.fiskalenmonitor.mk', 'Fiskalni monitor u Makedoniji'); ?><br>
+
+</p>

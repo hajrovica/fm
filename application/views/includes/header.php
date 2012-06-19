@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="<?php echo base_url();?>">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Fiskalni monitor BiH</title>
 <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" />
