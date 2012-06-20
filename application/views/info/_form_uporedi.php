@@ -1,0 +1,46 @@
+            <div style="text-align:center;">
+<br>
+
+            <?php echo form_open("", array('class'=>'stdform')); ?>
+                <strong>Odaberite opštinu/grad: </strong><br>
+                <?php
+                if (isset($grad_arr)) {
+                    echo form_dropdown('grad', $grad_arr);
+                }
+
+                 if (isset($grad_arr1)) {
+                    echo form_dropdown('grad1', $grad_arr1);
+                }
+
+                 if (isset($grad_arr2)) {
+                    echo form_dropdown('grad2', $grad_arr2);
+                }
+
+                //go to new line in form  - view issue
+                echo "<br><strong>Odaberite grupu rashoda: </strong><br>";
+                if (isset($grupa_arr)) {
+                    echo form_dropdown('grupa', $grupa_arr);
+                }
+
+
+
+
+
+                // Control out print
+                // echo "<pre>";
+                // print_r($grad_arr);
+                // print_r($grupa_arr);
+
+
+                ?>
+                <?php if ($godina_cnt==1): ?>
+                  <br><strong>Odaberite godinu: </strong><br><?php echo form_dropdown('godina', $godina_arr);?>
+                <?php else: ?>
+                <?php echo form_hidden('godina', '2011'); ?>
+
+                <?php endif ?><button class="submit radius2">Prikaži</button>
+
+            <?php echo form_close(); ?>
+
+            </div>
+            <br>

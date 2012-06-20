@@ -49,6 +49,7 @@ $route['login'] = 'auth/login';
 $route['logout'] = 'auth/logout';
 $route['prihodi'] = 'info/prihodi';
 $route['rashodi'] = 'info/rashodi';
+$route['uporedi'] = 'info/uporedi';
 $route['blog'] = 'info/novosti';
 $route['blog/:num'] = 'info/novosti/';
 

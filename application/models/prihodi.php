@@ -44,7 +44,7 @@ class Prihodi extends CI_Model {
             return $query->result_array();
        }
     }
-
+    //build select values from DB godina
     function selectGodina($table){
 
         // set array var for use  - value lists
@@ -62,12 +62,61 @@ class Prihodi extends CI_Model {
 
     }
 
-    function getGrupa()
-    {
-       $this->db->select('grupa_prihoda');
-       $this->db->distinct();
+    //build select values from DB grupa
+    function selectGrupa($table = null){
+      $arr = array();
+      $data['grupa'] = $this->getGrupa($table);
 
-       $query = $this->db->get('prihodi');
+      //get grupa in array
+      //print_r($data['grupa']);
+
+
+      //lets make this function work for rashodi and prihodi
+      // so lets declare variable for building of values
+
+      $grupa=null;
+
+      //this var can have 2 values grupa_prihoda or grupa_rashoda
+      //so lets define them based on $table parameter - on which table we are looking in
+
+      if ($table == 'prihodi') {
+        $grupa = 'grupa_prihoda';
+      }
+
+
+      if ($table == 'rashodi') {
+        $grupa = 'grupa_rashoda';
+      }
+
+      //$grupa var is declared
+
+      foreach ($data['grupa'] as $val => $value) {
+        //so we put $grupa in array building statment to get correct values
+        $arr[$value[$grupa]]=$value[$grupa];
+      }
+      return $arr;
+      //and now this function is working for both rashodi and prihodi
+
+    }
+
+    //get array of values from DB
+    function getGrupa($table = null)
+    {
+       if ($table == 'rashodi') {
+         $col = 'grupa_rashoda';
+       }else{
+        $col = 'grupa_prihoda';
+       }
+
+       $this->db->select($col);
+       $this->db->distinct();
+       if (isset($table)) {
+         $query = $this->db->get($table);
+       }else{
+        $query = $this->db->get('prihodi');
+
+       }
+
        if ($query) {
             return $query->result_array();
        }
@@ -115,6 +164,37 @@ class Prihodi extends CI_Model {
      }
    }
 
+   function sumGrupa($grad, $godina, $grupa){
+    //$this->db->select('ukupan_iznos');
+    $this->db->where('grad', $grad);
+    $this->db->where('godina', $godina);
+    $this->db->where('grupa_rashoda', $grupa);
+
+
+    $query = $this->db->get('rashodi');
+
+    $arr = array();
+    if ($query) {
+      $arr = $query->result_array();
+
+      foreach ($arr as $val => $value) {
+        $arry[] = $value['ukupan_iznos'];
+      }
+
+     return $arry;
+      //return $query->result_array();
+
+    }else{
+
+      die('Query sumGrupa ERROR ');
+    }
+
+
+
+   }
+
+
+//************* Novosti blog functions *************************
     function novosti($var=null){
 
         $this->db->order_by('id',  'DESC');

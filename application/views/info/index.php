@@ -55,7 +55,7 @@
     echo nbs(3);
     echo anchor('rashodi', $rashodi);
     echo "<br><br>";
-    echo anchor('#', $uporedi);
+    echo anchor('uporedi', $uporedi);
     echo nbs(3);
     echo anchor('#', $opstine);
 
