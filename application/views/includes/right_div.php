@@ -37,7 +37,12 @@ $blog = img(array(
     ?>
     <!-- START ORANGE DIV BREADCRUMBS -->
     <div class="orange" style="background-color:#e4653a;  color:#FFF; padding:3px; padding-left:7px; margin-left:11px;">
-        Vi ste ovdje: <strong> <?php echo nbs(3) . strtoupper($this->uri->segment(1)); ?></strong></div>
+        Vi ste ovdje: <strong> <?php
+        echo "$bcrumbs";
+        // echo nbs(3) . strtoupper($this->uri->segment(1)) . "  ---   |" . $this->router->class ."|" . $this->router->method;
+
+
+        ?></strong></div>
     <!-- END ORANGE DIV -->
 
 

@@ -106,6 +106,64 @@ public function _outpt($val=null, $data=null)
 
     }
 
+    public function bcrumbs(){
+        //ok lets define methods first
+
+        switch ($this->router->method) {
+            case 'pojmovi':
+                $pag = 'pojmovi';
+                break;
+
+                case 'onama':
+                $pag = 'o nama';
+                break;
+
+
+                case 'kontakt':
+                $pag = 'Kontakt';
+
+
+                case 'novac':
+                $pag = 'novac';
+                break;
+
+
+                case 'novosti':
+                $pag = 'blog';
+                break;
+
+
+                case 'prihodi':
+                $pag = 'prihodi';
+                break;
+
+
+                case 'rashodi':
+                $pag = 'rashodi';
+                break;
+
+
+                case 'uporedi':
+                $pag = 'uporedi rashode';
+                break;
+
+            default:
+                $pag = 'home';
+                break;
+        }
+
+        if ($this->router->class == 'stranice') {
+            $section = null;
+        }elseif ($this->router->class == 'info') {
+            $section = 'Gdje novac ide?';
+        }
+        $section .=" - ";
+
+        $bcrumb = "Vi ste ovdje:   " . strtoupper($section) . strtoupper($pag);
+
+        return $this->view_data['bcrumbs'] = $bcrumb;
+
+    }
 //////////////////////// END utility functions
     ////////////////////////////////////////////
 

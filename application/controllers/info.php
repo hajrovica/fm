@@ -7,6 +7,7 @@ class Info extends MY_Controller {
       parent::__construct();
       //Load Dependencies
       $this->load->model('Prihodi');
+      $this->bcrumbs();
 
    }
 
