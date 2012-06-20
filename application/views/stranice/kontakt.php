@@ -49,9 +49,10 @@ echo $img;
         <p>
             <br>Projekat „Fiskalni monitor u BiH“ <br>
             Sarajevska škola za nauku i tehnologiju<br>
-            Bistrik 7<br>
-            71000 Sarajevo <br>
-            Bosna i Hercegovina
+            Bistrik 7, 71000 Sarajevo <br>
+            Bosna i Hercegovina <br>
+
+            Tel: +387 33 563 030
 
         </p>
     </div>

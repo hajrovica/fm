@@ -9,7 +9,7 @@
     width: 75%;
     text-align: left;
     border-collapse: collapse;
-    background: url('<?php echo base_url(); ?>images/assets/crnilogo.png') 90% 80% no-repeat;
+    /*background: url('<?php echo base_url(); ?>images/assets/crnilogo.png') 90% 80% no-repeat;*/
 }
 #background-image th
 {
@@ -25,6 +25,8 @@
     /*color: #669;*/
     color: #2A2A2A;
     border-top: 1px solid #fff;
+    text-align: left;
+    font-weight:bold;
 }
 #background-image tfoot td
 {
@@ -51,6 +53,8 @@
     color: #339;
     background: none;
 }
+
+
 
 </style>
 
@@ -257,6 +261,50 @@ jQuery(".sadrzaj").hide();
       <h3>Nastavi istraživati</h3>
     </div>
    <?php
+    $sml_rangiraj = img(array(
+        'src'=>'images/assets/fm/sml_rangiraj.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+     $sml_prihodi = img(array(
+        'src'=>'images/assets/fm/sml_prihodi.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+
+     $sml_uporedi = img(array(
+        'src'=>'images/assets/fm/sml_uporedi.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+
+          $sml_tokovi = img(array(
+        'src'=>'images/assets/fm/sml_tokovi.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+           $sml_pojmovi = img(array(
+        'src'=>'images/assets/fm/sml_pojmovi.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+
+      $grey = img(array(
+        'src'=>'images/assets/fm/grey.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
 
 
 
@@ -266,36 +314,37 @@ jQuery(".sadrzaj").hide();
    echo form_hidden('godina', $this->input->post('godina'));
    ?>
 
-            <table id="background-image" style="width:50%;">
+
+           <table id="background-image" style="width:50%;">
 
 
             <tbody>
             <tr>
-            <td>Pregledaj rashode za istu opštinu/grad:</td>
-            <td> <?php echo form_submit('istrazi', 'Istraži'); ?></td>
+            <td width="60%">Pregledaj rashode za istu opštinu/grad</td>
+            <td style="text-align:center;"> <?php echo form_submit('istrazi', 'Istraži'); ?></td>
 
 
 
             </tr>
 
             <tr>
-            <td>Uporedi opštine/gradove prema rashodima</td>
-            <td> </td>
+            <td>Uporedi opštine/gradove prema prihodima</td>
+            <td style="text-align:center;"> <?php echo anchor('#', $sml_uporedi); ?>  </td>
             </tr>
 
             <tr>
             <td>Rangiraj opštine/gradove</td>
-            <td> </td>
+            <td style="text-align:center;"> <?php echo anchor('#', $sml_rangiraj); ?> </td>
             </tr>
 
             <tr>
             <td>Pregledaj tokove novca za drugu opštinu/grad</td>
-            <td> </td>
+            <td style="text-align:center;"> <?php echo anchor('info', $sml_tokovi); ?> </td>
             </tr>
 
              <tr>
-            <td>Vidi tumačenje pojmova:</td>
-            <td> <?php echo anchor('pojmovi', 'Vidi'); ?></td>
+            <td>Vidi tumačenje pojmova</td>
+            <td style="text-align:center;"> <?php echo anchor('pojmovi', $sml_pojmovi); ?></td>
 
 
 

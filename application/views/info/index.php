@@ -2,25 +2,21 @@
 
 <?php $this->load->view('includes/right_div'); ?>
 <div class="wh" style="width:75%;">
-<div>
-    Fiskalni monitor građanima omogućava:
-    <ul>
-        <li>
-            pregled prihoda i rashoda opština i gradova u BiH prema određenim budžetskim stavkama;<br>
-        </li>
-        <li>
+   <br> <h2>Gdje novac ide?</h2>
+<div style="text-align:center;  font-family: PT Sans Narrow; font-size:19px;">
+  <br>  Fiskalni monitor građanima omogućava:
+
+
+            <br>pregled prihoda i rashoda opština i gradova u BiH prema određenim budžetskim stavkama;<br>
+
             upoređivanje rashoda opština i gradova;<br>
-        </li>
-        <li>
+
             rangiranje opština/gradova na osnovu određenih stavki rashoda;<br>
-        </li>
-        <li>
-            vizualizaciju podataka;
-        </li>
 
-    </ul>
+            vizualizaciju podataka.<br>
 
-    Izaberite neku od ponuđenih opcija za pregled budžetskih podataka opština i gradova u BiH.</div>
+
+</div> <br>  <h4 style="text-align:center;">Izaberite neku od ponuđenih opcija za pregled budžetskih podataka opština i gradova u BiH.</h4>
 
     <?php
 
@@ -59,9 +55,10 @@
     echo nbs(3);
     echo anchor('rashodi', $rashodi);
     echo "<br><br>";
-    echo anchor('#', $opstine);
-    echo nbs(3);
     echo anchor('#', $uporedi);
+    echo nbs(3);
+    echo anchor('#', $opstine);
+
 
      ?>
 

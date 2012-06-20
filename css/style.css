@@ -48,7 +48,7 @@ body { background: #FFF; font-family: Arial, Helvetica, sans-serif; font-size: 1
 body.login { background: #555 url(../images/bgmain.png); }
 body.errorpage { background-color: #666; }
 
-a { color: #4585D3; text-decoration: none; outline: none; font-weight: bold; }
+a { color: #0094B8; text-decoration: none; outline: none; font-weight: bold; }
 a:hover { text-decoration: none; background-color: #EEEEEE; }
 a.whitelink { color: #ccc; }
 a.whitelink:hover { color: #fff; text-decoration: none; }

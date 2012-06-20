@@ -9,7 +9,7 @@
     width: 75%;
     text-align: left;
     border-collapse: collapse;
-    background: url('<?php echo base_url(); ?>images/assets/crnilogo.png') 90% 80% no-repeat;
+    /*background: url('<?php echo base_url(); ?>images/assets/crnilogo.png') 90% 80% no-repeat;*/
 }
 #background-image th
 {
@@ -25,7 +25,8 @@
     /*color: #669;*/
     color: #2A2A2A;
     border-top: 1px solid #fff;
-    text-align: center;
+    text-align: left;
+    font-weight:bold;
 }
 #background-image tfoot td
 {
@@ -273,6 +274,29 @@ jQuery(".sadrzaj").hide();
         ));
 
 
+     $sml_uporedi = img(array(
+        'src'=>'images/assets/fm/sml_uporedi.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+
+          $sml_tokovi = img(array(
+        'src'=>'images/assets/fm/sml_tokovi.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+           $sml_pojmovi = img(array(
+        'src'=>'images/assets/fm/sml_pojmovi.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+
       $grey = img(array(
         'src'=>'images/assets/fm/grey.png',
         'height'=>'33',
@@ -293,8 +317,8 @@ jQuery(".sadrzaj").hide();
 
             <tbody>
             <tr>
-            <td>Pregledaj prihode za istu opštinu/grad:</td>
-            <td> <?php echo form_submit('istrazi', 'Istraži'); ?></td>
+            <td width="60%">Pregledaj prihode za istu opštinu/grad</td>
+            <td style="text-align:center;"> <?php echo form_submit('istrazi', 'Istraži'); ?></td>
 
 
 
@@ -302,22 +326,22 @@ jQuery(".sadrzaj").hide();
 
             <tr>
             <td>Uporedi opštine/gradove prema prihodima</td>
-            <td> <?php echo anchor('#', $sml_prihodi); ?>  </td>
+            <td style="text-align:center;"> <?php echo anchor('#', $sml_uporedi); ?>  </td>
             </tr>
 
             <tr>
             <td>Rangiraj opštine/gradove</td>
-            <td> <?php echo anchor('#', $sml_rangiraj); ?> </td>
+            <td style="text-align:center;"> <?php echo anchor('#', $sml_rangiraj); ?> </td>
             </tr>
 
             <tr>
             <td>Pregledaj tokove novca za drugu opštinu/grad</td>
-            <td> <?php echo anchor('#', $grey); ?> </td>
+            <td style="text-align:center;"> <?php echo anchor('info', $sml_tokovi); ?> </td>
             </tr>
 
              <tr>
-            <td>Vidi tumačenje pojmova:</td>
-            <td> <?php echo anchor('pojmovi', $grey); ?></td>
+            <td>Vidi tumačenje pojmova</td>
+            <td style="text-align:center;"> <?php echo anchor('pojmovi', $sml_pojmovi); ?></td>
 
 
 

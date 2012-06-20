@@ -1,7 +1,7 @@
 <?php $this->load->view('includes/dslika'); ?>
 <?php $this->load->view('includes/right_div'); ?>
 <div class="wh" style="width:75%;">
-    <h2>Zašto bi nas budžet opštine trebao interesovati?</h2>
+  <br>  <h2>Zašto bi nas budžet opštine trebao interesovati?</h2>
         <br><p style="text-align:center;  font-family: PT Sans Narrow; font-size:19px;">
             Bez obzira da li ste penzioner, radite, studirate, ili ste nezaposleni.  Svi plaćamo porez.<br>
                         Poljoprivrednik državi plaća porez na dohodak u iznosu od 10%. Zaposleni plaćaju porez na platu u iznosu od 10%. Ukoliko kupite nekretninu, plaćate porez na imovinu u iznosu od 5%. Svakom kupovinom plaćate PDV od 17%.

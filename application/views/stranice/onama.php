@@ -55,7 +55,7 @@
 
 </style>
 <div class="wh" style="width:77%;">
-    <h2>
+  <br>  <h2>
         O nama
     </h2>
     <br>
@@ -68,7 +68,7 @@
     U prvoj fazi objavljujemo budžetske podatke devet opština u BiH koje su nam dostavile relevantne informacije. Tim Fiskalnog monitora u BiH će nastaviti kontinuirano prikupljati budžetske podatke ostalih opština i gradova u BiH i objavljivati ih široj javnosti.
 <br>
 <br>
-    Fiskalni monitor u BiH implementira <?php echo anchor_popup('http://ssst.edu.ba', 'Sarajevska škola za nauku i tehnologiju.') ?>.</p>
+    Fiskalni monitor u BiH implementira <?php echo anchor_popup('http://ssst.edu.ba', 'Sarajevska škola za nauku i tehnologiju.') ?></p>
 
     <p>
 

@@ -1,7 +1,7 @@
 <?php $this->load->view('includes/right_div'); ?>
 <div class="wh" style="width:75%; text-align:justify;">
 
-  <h2 style="text-align:center;">Pojmovi u oblasti prihoda</h2>
+ <br> <h2 style="text-align:center;">Pojmovi u oblasti prihoda</h2>
 
 <br>
 <h2>Porezni prihodi</h2>

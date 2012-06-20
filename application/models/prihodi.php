@@ -6,6 +6,7 @@ class Prihodi extends CI_Model {
     function getGrad($table)
     {
        $this->db->select('grad');
+       $this->db->order_by('grad');
        $this->db->distinct();
 
        $query = $this->db->get("$table");

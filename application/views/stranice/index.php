@@ -72,7 +72,7 @@ $ic4 = img(array(
                 <h4>Gdje novac ide?</h4>
                 <?php echo anchor('info', $ic4); ?>
                 Pregledaj strukturu prihoda i rashoda, saznaj kako se ubiru prihodi i kako se troši tvoj novac u opštinama i gradovima. Analiziraj razlike u trošenju novca i rangiraj troškove opština i gradova na osnovu različitih budžetskih stavki.
-                 <?php  echo anchor('info', 'Počni istraživati ...[') ?>
+                 <?php  echo anchor('info', 'Počni istraživati ...') ?>
             </p>
 
         </div>
