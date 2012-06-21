@@ -161,7 +161,7 @@ public function _outpt($val=null, $data=null)
                 $pag = '';
                 break;
         }
-
+        $section = null;
         if ($this->router->class == 'stranice') {
             $section = null;
         }elseif ($this->router->class == 'info') {

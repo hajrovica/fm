@@ -7,6 +7,7 @@ public function __construct()
       parent::__construct();
       //Load Dependencies
       //$this->is_logged_in();
+       $this->load->model('Prihodi');
 
    }
 
@@ -96,6 +97,38 @@ public function __construct()
 
       //$this->load->view('includes/template', $data);
       $this->_outpt('stranice/kontakt');
+
+    }
+
+
+    function fokus(){
+      $this->load->helper('text');
+
+        if ($this->uri->segment(3)) {
+          $this->view_data['novosti'] = $this->Prihodi->novosti($this->uri->segment(2));
+        }else{
+          $this->view_data['novosti'] = $this->Prihodi->novosti('fokus');
+
+        }
+
+
+
+
+        $i = 0;
+        foreach ($this->view_data['novosti'] as $arr => $novost) {
+         $intro = word_limiter($novost['text'], 21);
+         $this->view_data['novosti'][$i]['intro'] = $intro;
+         $i++;
+        }
+
+    //$this->view_data['novosti']['intro'] = word_limiter($this->view_data['novosti']['text'], 3);
+
+
+        echo "<pre>";
+        print_r($this->view_data['novosti']);
+
+
+      $this->_outpt('info/novosti');
 
     }
 

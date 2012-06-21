@@ -240,13 +240,15 @@ class Prihodi extends CI_Model {
 
 
 //************* Novosti blog functions *************************
-    function novosti($var=null){
+    function novosti($var=null, $var1 = null){
 
         $this->db->order_by('id',  'DESC');
-        if (isset($var)) {
+        if (isset($var1)) {
           # code...
-        $this->db->where('id', $var);
+        $this->db->where('id', $var1);
         }
+
+        $this->db->like('tip', $var);
 
         $query = $this->db->get('novosti');
 
