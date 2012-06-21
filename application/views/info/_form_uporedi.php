@@ -1,10 +1,13 @@
             <div style="text-align:center;">
-<br>
+
 
             <?php echo form_open("", array('class'=>'stdform')); ?>
-                <strong>Odaberite opštinu/grad: </strong><br>
+
                 <?php
                 if (isset($grad_arr)) {
+echo <<<HTML
+<strong>Odaberite opštinu/grad: </strong><br>
+HTML;
                     echo form_dropdown('grad', $grad_arr);
                 }
 
@@ -17,8 +20,9 @@
                 }
 
                 //go to new line in form  - view issue
-                echo "<br><strong>Odaberite grupu rashoda: </strong><br>";
+
                 if (isset($grupa_arr)) {
+                    echo "<br><strong>Odaberite grupu rashoda: </strong><br>";
                     echo form_dropdown('grupa', $grupa_arr);
                 }
 
@@ -33,7 +37,7 @@
 
 
                 ?>
-                <?php if ($godina_cnt==1): ?>
+                <?php if ($godina_cnt>1): ?>
                   <br><strong>Odaberite godinu: </strong><br><?php echo form_dropdown('godina', $godina_arr);?>
                 <?php else: ?>
                 <?php echo form_hidden('godina', '2011'); ?>

@@ -14,6 +14,7 @@ function __construct()
         parent::__construct();
 
        // $this->user = $this->session->userdata('user_id') ? User::find($this->session->userdata('user_id')) : FALSE;
+        $this->bcrumbs();
 
     }
 
@@ -110,7 +111,7 @@ public function _outpt($val=null, $data=null)
         //ok lets define methods first
 
         switch ($this->router->method) {
-            case 'pojmovi':
+                case 'pojmovi':
                 $pag = 'pojmovi';
                 break;
 
@@ -121,7 +122,7 @@ public function _outpt($val=null, $data=null)
 
                 case 'kontakt':
                 $pag = 'Kontakt';
-
+                break;
 
                 case 'novac':
                 $pag = 'novac';
@@ -147,8 +148,13 @@ public function _outpt($val=null, $data=null)
                 $pag = 'uporedi rashode';
                 break;
 
+
+                case 'fm':
+                $pag = 'Fiskalni monitor';
+                break;
+
             default:
-                $pag = 'home';
+                $pag = '';
                 break;
         }
 

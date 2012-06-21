@@ -7,7 +7,7 @@ class Info extends MY_Controller {
       parent::__construct();
       //Load Dependencies
       $this->load->model('Prihodi');
-      $this->bcrumbs();
+
 
    }
 
@@ -199,7 +199,7 @@ class Info extends MY_Controller {
 
    function uporedi()
          {
-          //Select crad fro rashodi DB
+          //Select grad for rashodi DB
           $grad = $this->Prihodi->selectGrad('rashodi');
           //assign grad to multiple vars
           $this->view_data['grad_arr'] = $this->view_data['grad_arr1'] = $this->view_data['grad_arr2'] = $grad;
@@ -270,16 +270,55 @@ class Info extends MY_Controller {
 
           }
 
-          echo "<br>control printout";
-          echo "<pre>";
-         // print_r($this->view_data['cntrl']);
-          echo "</pre>";
+         //  echo "<br>control printout";
+         //  echo "<pre>";
+         // // print_r($this->view_data['cntrl']);
+         //  echo "</pre>";
       //***************** END  CONTROL PRINTOUT *********************//
 
 
 
           //call view for this function
            $this->_outpt('info/uporedi');
+         }
+
+         function rangiraj(){
+
+
+          $this->view_data['godina_arr'] = $this->Prihodi->selectGodina('rashodi');
+          $this->view_data['grupa_arr'] = $this->Prihodi->selectGrupa('rashodi');
+          $this->view_data['godina_cnt'] = count($this->view_data['godina_arr']);
+
+
+
+
+            if ($_POST) {
+
+              //declare shorter vars for ease reading
+            $grad = $this->input->post('grad');
+
+            $godina = $this->input->post('godina');
+            $grupa = $this->input->post('grupa');
+
+
+              $this->view_data['arr1'] = $arr1 = $this->Prihodi->rangiraj($godina, $grupa);
+
+            }
+          //call view for this function
+          $this->_outpt('info/rangiraj');
+
+
+          //***************** START CONTROL PRINTOUT *********************//
+
+
+
+          echo "<br>control printout";
+          echo "<pre>";
+          print_r($arr1);
+          echo "</pre>";
+      //***************** END  CONTROL PRINTOUT *********************//
+
+
          }
 
 }

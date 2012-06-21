@@ -194,6 +194,51 @@ class Prihodi extends CI_Model {
    }
 
 
+  function rangiraj($godina, $grupa){
+    //$this->db->select('ukupan_iznos');
+    //$this->db->where('grad', $grad);
+    $this->db->where('godina', $godina);
+    $this->db->where('grupa_rashoda', $grupa);
+    $this->db->order_by('grad');
+
+
+    $query = $this->db->get('rashodi');
+
+    $arr = array();
+    if ($query) {
+      $arr = $query->result_array();
+
+      foreach ($arr as $val => $value) {
+        $arry[][$value['grad']] = $value['ukupan_iznos'];
+
+      }
+
+      $newarry = array();
+
+      foreach ($arry as $value) {
+        foreach ($value as $key => $secondValue) {
+          if (!isset($newarr[$key])) {
+            $newarr[$key]=0;
+          }
+          $newarr[$key] += $secondValue;
+        }
+      }
+    arsort($newarr);
+     //return $arry;
+     return $newarr;
+      //return $query->result_array();
+
+    }else{
+
+      die('Query sumGrupa ERROR ');
+    }
+
+
+
+   }
+
+
+
 //************* Novosti blog functions *************************
     function novosti($var=null){
 

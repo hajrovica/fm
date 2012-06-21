@@ -1,6 +1,7 @@
 <!-- START of right DIV -->
    <?php
 
+
    $dImg = img(array(
         'src'=>'images/assets/desnaslika.jpg',
         'width'=>'100%'
