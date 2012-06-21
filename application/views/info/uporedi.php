@@ -117,21 +117,7 @@ jQuery(".sadrzaj").hide();
 
 
 
-
-
-  $ch_title =$this->router->method . " - " . $this->input->post('grad');
-  $ch_title =ucwords($ch_title);
-
-
    ?>
-
-
-
-
-
-
-
-
 
 
 <br clear="all"> <br>
@@ -139,7 +125,7 @@ jQuery(".sadrzaj").hide();
 
   <div id="charts" style="text-align:center;">
     <!-- START CHARTS by total and  prihod_stanovnik -->
-    <div id="cnt" style="">1!!!</div>
+    <div id="cnt" style=""> </div>
 
     <!-- END CHARTS -->
 
@@ -152,8 +138,6 @@ jQuery(".sadrzaj").hide();
 
 <script type="text/javascript">
 
-
-var chart1; // globally available
 var chart2; // globally available
 
 jQuery(document).ready(function()

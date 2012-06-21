@@ -4,7 +4,7 @@
 #background-image
 {
     font-family: "PT Sans Narrow",  "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    font-size: 15px;
+    font-size: 21px;
     margin: 45px;
     width: 75%;
     text-align: left;
@@ -15,7 +15,7 @@
 {
     padding: 12px;
     font-weight: normal;
-    font-size: 15px;
+    font-size: 17px;
     /*color: #339;*/
     color: #000;
 }
@@ -25,12 +25,13 @@
     /*color: #669;*/
     color: #2A2A2A;
     border-top: 1px solid #fff;
+    font-size: 17px;
     text-align: left;
-    font-weight:bold;
+    font-weight:normal;
 }
 #background-image tfoot td
 {
-    font-size: 11px;
+    font-size: 21px;
 }
 #background-image tbody td
 {
@@ -115,11 +116,10 @@ jQuery(".sadrzaj").hide();
 // ********* CONTROL PRINT  END **********
 
 if ($_POST) {
-  print_r($arr1);
-  echo "<hr>";
+
 ?>
 
- <table id="background-image" style="width:50%;">
+ <table id="background-image" style="width:90%;">
 
             <thead>
             <tr>
@@ -137,8 +137,9 @@ if ($_POST) {
 
             <tbody>
            <?php
-foreach ($arr1 as $grad => $value) {
-$value = number_format($value, $decimals=2, $dec_point = '.', $thousands_sep = ',');
+                foreach ($arr1 as $grad => $value) {
+                $value = number_format($value, $decimals=2, $dec_point = '.', $thousands_sep = ',');
+
 echo <<<HTML
               <tr>
               <td width="60%">{$grad}</td>
@@ -167,159 +168,8 @@ HTML;
 
 
 
-
-  $ch_title =$this->router->method . " - " . $this->input->post('grad');
-  $ch_title =ucwords($ch_title);
-
-
    ?>
 
 
 
-
-
-
-
-
-
-
-<br clear="all"> <br>
-
-
-  <div id="charts" style="text-align:center;">
-    <!-- START CHARTS by total and  prihod_stanovnik -->
-    <div id="cnt" style="">1!!!</div>
-
-    <!-- END CHARTS -->
-
-  </div>
-
-
-
 </div>
-
-
-<script type="text/javascript">
-
-
-var chart1; // globally available
-var chart2; // globally available
-
-jQuery(document).ready(function()
-{
-
-chart2 = new Highcharts.Chart({
-            chart: {
-                renderTo: 'cnt',
-                type: 'column'
-            },
-            title: {
-                text: 'Poređenje opština/gradova'
-            },
-            subtitle: {
-                text: 'Gradovi: <?php echo "$grad1, $grad2 i $grad3" ?>'
-            },
-            xAxis: {
-                categories: [
-                 '<?php  echo $this->input->post('godina'); ?>'
-
-                ],
-                labels: {
-                    rotation: -45,
-                    align: 'right',
-                    style: {
-                        fontSize: '13px',
-                        fontFamily: 'Verdana, sans-serif'
-                    }
-                }
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: '<?php echo $this->input->post('grupa'); ?>'
-                }
-            },
-            legend: {
-                layout: 'vertical',
-                backgroundColor: '#FFFFFF',
-                align: 'left',
-                verticalAlign: 'top',
-                x: 100,
-                y: 70,
-                floating: true,
-                shadow: true
-            },
-            tooltip: {
-                formatter: function() {
-                    return ''+
-                        Highcharts.numberFormat(this.point.y, 2, '.', ',') +' KM';
-                }
-            },
-            plotOptions: {
-                column: {
-                    pointPadding: 0.2,
-                    borderWidth: 0
-                }
-            },
-                series: [{
-                name: '<?php echo $grad1; ?>',
-                data: [<?php echo $sum1; ?>],
-                                  dataLabels: {
-                                  enabled: true,
-                                  rotation: -45,
-                                  color: '#FFFFFF',
-                                  align: 'right',
-                                  x: -10,
-                                  y: 50,
-                                  formatter: function() {
-                                      return Highcharts.numberFormat(this.point.y, 2, '.', ',') +' KM';
-                                  },
-                                  style: {
-                                      fontSize: '13px',
-                                      fontFamily: 'Verdana, sans-serif'
-                                  }
-                              }
-
-            }, {
-                name: '<?php echo $grad2; ?>',
-                data: [<?php echo $sum2; ?>],
-                                 dataLabels: {
-                                  enabled: true,
-                                  rotation: -45,
-                                  color: '#FFFFFF',
-                                  align: 'right',
-                                  x: -10,
-                                  y: 50,
-                                  formatter: function() {
-                                      return Highcharts.numberFormat(this.point.y, 2, '.', ',') +' KM';
-                                  },
-                                  style: {
-                                      fontSize: '13px',
-                                      fontFamily: 'Verdana, sans-serif'
-                                  }
-                              }
-
-            }, {
-                name: '<?php echo $grad3; ?>',
-                data: [<?php echo $sum3; ?>],
-                                dataLabels: {
-                                    enabled: true,
-                                    rotation: -45,
-                                    color: '#FFFFFF',
-                                    align: 'right',
-                                    x: -10,
-                                    y: 50,
-                                    formatter: function() {
-                                        return Highcharts.numberFormat(this.point.y, 2, '.', ',') +' KM';
-                                    },
-                                    style: {
-                                        fontSize: '13px',
-                                        fontFamily: 'Verdana, sans-serif'
-                                    }
-                                }
-
-            }]
-        });
-
-});
-</script>

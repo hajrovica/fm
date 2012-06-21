@@ -325,8 +325,8 @@ jQuery(".sadrzaj").hide();
             </tr>
 
             <tr>
-            <td>Uporedi opštine/gradove prema prihodima</td>
-            <td style="text-align:center;"> <?php echo anchor('#', $sml_uporedi); ?>  </td>
+            <td>Uporedi opštine/gradove prema rashodima</td>
+            <td style="text-align:center;"> <?php echo anchor('uporedi', $sml_uporedi); ?>  </td>
             </tr>
 
             <tr>

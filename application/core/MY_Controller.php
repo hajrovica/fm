@@ -153,6 +153,10 @@ public function _outpt($val=null, $data=null)
                 $pag = 'Fiskalni monitor';
                 break;
 
+                case 'rangiraj':
+                $pag = 'Rangiraj gradove/opštine';
+                break;
+
             default:
                 $pag = '';
                 break;
@@ -165,7 +169,7 @@ public function _outpt($val=null, $data=null)
         }
         $section .=" - ";
 
-        $bcrumb = "Vi ste ovdje:   " . strtoupper($section) . strtoupper($pag);
+        $bcrumb = "   " . strtoupper($section) . strtoupper($pag);
 
         return $this->view_data['bcrumbs'] = $bcrumb;
 

@@ -50,7 +50,7 @@
 
 
 
-             echo anchor_popup('#', $fb);
+             echo anchor_popup('http://www.facebook.com/FiskalniMonitorBiH', $fb);
              echo anchor_popup('#', $tw);
              echo anchor_popup('#', $mail);
 

@@ -37,13 +37,13 @@ $blog = img(array(
 
     ?>
     <!-- START ORANGE DIV BREADCRUMBS -->
-    <div class="orange" style="background-color:#e4653a;  color:#FFF; padding:3px; padding-left:7px; margin-left:11px;">
-        Vi ste ovdje: <strong> <?php
+    <div class="orange" style="background-color:#e4653a;  color:#FFF; padding:3px; padding-left:7px; margin-left:11px; font-family: PT Sans Narrow, Arial; font-weight:normal; font-size:14px;">
+        Vi ste ovdje:  <?php
         echo "$bcrumbs";
         // echo nbs(3) . strtoupper($this->uri->segment(1)) . "  ---   |" . $this->router->class ."|" . $this->router->method;
 
 
-        ?></strong></div>
+        ?></div>
     <!-- END ORANGE DIV -->
 
 
@@ -80,7 +80,7 @@ $blog = img(array(
 
          ?>
           <br>
-          <div class="fb-like-box" data-href="http://www.facebook.com/SarajevoSevdahFest" data-width="190" data-colorscheme="" data-show-faces="true" data-stream="false" data-header="true"></div>
+          <div class="fb-like-box" data-href="http://www.facebook.com/FiskalniMonitorBiH" data-width="190" data-colorscheme="" data-show-faces="true" data-stream="false" data-header="true"></div>
 
 
     </div>

@@ -33,6 +33,8 @@ class Info extends MY_Controller {
         $this->view_data['godina_cnt'] = count($this->view_data['godina_arr']);
         //echo "GODINA:" . count($this->view_data['godina_arr']);
 
+        $series_data = array();
+
 
 
         //select grad
@@ -282,7 +284,7 @@ class Info extends MY_Controller {
            $this->_outpt('info/uporedi');
          }
 
-         function rangiraj(){
+     function rangiraj(){
 
 
           $this->view_data['godina_arr'] = $this->Prihodi->selectGodina('rashodi');
@@ -290,7 +292,7 @@ class Info extends MY_Controller {
           $this->view_data['godina_cnt'] = count($this->view_data['godina_arr']);
 
 
-
+          $arr1 = array();
 
             if ($_POST) {
 
@@ -312,10 +314,10 @@ class Info extends MY_Controller {
 
 
 
-          echo "<br>control printout";
-          echo "<pre>";
-          print_r($arr1);
-          echo "</pre>";
+          // echo "<br>control printout";
+          // echo "<pre>";
+          // print_r($arr1);
+          // echo "</pre>";
       //***************** END  CONTROL PRINTOUT *********************//
 
 
