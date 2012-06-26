@@ -45,11 +45,13 @@ $route['pojmovi'] = 'stranice/pojmovi';
 $route['onama'] = 'stranice/onama';
 $route['kontakt'] = 'stranice/kontakt';
 $route['novac'] = 'stranice/novac';
+$route['fokus'] = 'stranice/fokus';
 $route['login'] = 'auth/login';
 $route['logout'] = 'auth/logout';
 $route['prihodi'] = 'info/prihodi';
 $route['rashodi'] = 'info/rashodi';
 $route['uporedi'] = 'info/uporedi';
+$route['rangiraj'] = 'info/rangiraj';
 $route['blog'] = 'info/novosti';
 $route['blog/:num'] = 'info/novosti/';
 

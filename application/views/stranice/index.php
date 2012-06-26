@@ -81,7 +81,7 @@ $ic4 = img(array(
 
     <div class="one_third">
         <br>
-        <?php echo $ic2; ?>
+        <?php echo anchor('fokus', $ic2); ?>
         <div>
                 <h4>U FOKUSU</h4>
                 <br>

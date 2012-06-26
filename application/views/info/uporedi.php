@@ -133,6 +133,104 @@ jQuery(".sadrzaj").hide();
 
 
 
+
+
+                               <div class="one_half last">
+
+    </div>
+ <?php
+     $sml_rangiraj = img(array(
+        'src'=>'images/assets/fm/sml_rangiraj.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+     $sml_prihodi = img(array(
+        'src'=>'images/assets/fm/sml_prihodi.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+
+     $sml_uporedi = img(array(
+        'src'=>'images/assets/fm/sml_uporedi.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+
+          $sml_tokovi = img(array(
+        'src'=>'images/assets/fm/sml_tokovi.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+           $sml_pojmovi = img(array(
+        'src'=>'images/assets/fm/sml_pojmovi.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+
+      $grey = img(array(
+        'src'=>'images/assets/fm/grey.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+          if ($_POST) {
+
+
+
+
+
+   ?>
+
+
+
+            <table id="background-image" style="width:30%; float:right;">
+
+
+            <tbody>
+
+
+             <tr>
+            <td style="vertical-align:middle; text-align:center;">Nastavi istraživati</td>
+            <td style="text-align:center;"> <?php echo anchor('info', $sml_pojmovi); ?></td>
+
+
+
+            </tr>
+
+
+
+            </tbody>
+            </table>
+
+
+   <?php
+
+
+ }
+
+
+     ?>
+    <!-- END informacije -->
+  </div>
+  <br clear="all">
+
+
+
+
+
+
+
 </div>
 
 

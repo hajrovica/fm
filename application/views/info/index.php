@@ -57,7 +57,7 @@
     echo "<br><br>";
     echo anchor('uporedi', $uporedi);
     echo nbs(3);
-    echo anchor('#', $opstine);
+    echo anchor('rangiraj', $opstine);
 
 
      ?>

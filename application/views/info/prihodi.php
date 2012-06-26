@@ -249,6 +249,7 @@ jQuery(".sadrzaj").hide();
     <div class="one_half">
       <?php foreach ($opcina_arr as $opcine => $value):?>
       <h3>Informacije o  <?php echo $value->opcina; ?></h3>
+        <br>
         <p>
           <?php echo $value->info; ?>
         </p>
@@ -334,7 +335,7 @@ jQuery(".sadrzaj").hide();
 
             <tr>
             <td>Rangiraj opštine/gradove</td>
-            <td style="text-align:center;"> <?php echo anchor('#', $sml_rangiraj); ?> </td>
+            <td style="text-align:center;"> <?php echo anchor('rangiraj', $sml_rangiraj); ?> </td>
             </tr>
 
             <tr>

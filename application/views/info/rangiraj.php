@@ -116,6 +116,7 @@ jQuery(".sadrzaj").hide();
 // ********* CONTROL PRINT  END **********
 
 if ($_POST) {
+//print_r($_POST);
 
 ?>
 
@@ -124,7 +125,7 @@ if ($_POST) {
             <thead>
             <tr>
             <th scope="col">Grad/Opština</th>
-            <th scope="col" style="text-align:center;">Iznos</th>
+            <th scope="col" style="text-align:center;">Ukupno(KM) - <?php echo $this->input->post('grupa'); ?></th>
 
             </tr>
             </thead>
@@ -138,7 +139,7 @@ if ($_POST) {
             <tbody>
            <?php
                 foreach ($arr1 as $grad => $value) {
-                $value = number_format($value, $decimals=2, $dec_point = '.', $thousands_sep = ',');
+                $value = number_format($value, $decimals=2, $dec_point = '.', $thousands_sep = ',') . " KM";
 
 echo <<<HTML
               <tr>
@@ -160,6 +161,40 @@ HTML;
 
 
 <?php
+
+     $sml_pojmovi = img(array(
+        'src'=>'images/assets/fm/sml_pojmovi.png',
+        'height'=>'33',
+        'class'=>'fade'
+
+        ));
+
+?>
+<table id="background-image" style="width:30%; float:right; margin:3px;">
+
+
+<tbody>
+
+
+<tr>
+<td style="vertical-align:middle; text-align:center;">Nastavi istraživati</td>
+<td style="text-align:center;"> <?php echo anchor('info', $sml_pojmovi); ?></td>
+
+
+
+</tr>
+
+
+
+</tbody>
+</table>
+
+<br clear="all">
+<?PHP
+
+
+
+
 
 
 

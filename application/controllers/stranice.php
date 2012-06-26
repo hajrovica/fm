@@ -124,8 +124,8 @@ public function __construct()
     //$this->view_data['novosti']['intro'] = word_limiter($this->view_data['novosti']['text'], 3);
 
 
-        echo "<pre>";
-        print_r($this->view_data['novosti']);
+        // echo "<pre>";
+        // print_r($this->view_data['novosti']);
 
 
       $this->_outpt('info/novosti');

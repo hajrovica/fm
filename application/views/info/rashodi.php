@@ -247,6 +247,7 @@ jQuery(".sadrzaj").hide();
     <div class="one_half">
       <?php foreach ($opcina_arr as $opcine => $value):?>
       <h3>Informacije o opštini <?php echo $value->opcina; ?></h3>
+        <br>
         <p>
           <?php echo $value->info; ?>
         </p>
@@ -259,7 +260,8 @@ jQuery(".sadrzaj").hide();
       <h3>Nastavi istraživati</h3>
     </div>
  <?php
-     $sml_rangiraj = img(array(
+
+   $sml_rangiraj = img(array(
         'src'=>'images/assets/fm/sml_rangiraj.png',
         'height'=>'33',
         'class'=>'fade'
@@ -297,12 +299,6 @@ jQuery(".sadrzaj").hide();
         ));
 
 
-      $grey = img(array(
-        'src'=>'images/assets/fm/grey.png',
-        'height'=>'33',
-        'class'=>'fade'
-
-        ));
 
    echo form_open('prihodi', array('name'=>'istrazi', 'class'=>'stdform'));
 
