@@ -214,7 +214,7 @@ class Info extends MY_Controller {
 
 
           if ($_POST) {
-            echo $this->input->post('grad') . "AND " . $this->input->post('godina') . $this->input->post('grupa') . "<hr>";
+           // echo $this->input->post('grad') . "AND " . $this->input->post('godina') . $this->input->post('grupa') . "<hr>";
 
             //declare shorter vars for ease reading
             $grad = $this->input->post('grad');
@@ -268,7 +268,7 @@ class Info extends MY_Controller {
 
 
 
-            echo $sum1 . ' ---- ' . $sum2 . ' ---- ' .$sum3 . "<br";
+           // echo $sum1 . ' ---- ' . $sum2 . ' ---- ' .$sum3 . "<br";
 
           }
 

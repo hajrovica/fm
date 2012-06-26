@@ -1,3 +1,4 @@
+
 <style type="text/css">
 
 /*  Table design*/
@@ -237,7 +238,11 @@ jQuery(".sadrzaj").hide();
 
   <div id="charts" style="text-align:center;">
     <!-- START CHARTS by total and  prihod_stanovnik -->
+
+
     <div id="cnt" style="float:left;">1!!!</div>
+
+
     <div id="cnt1" style="margin-left:470px;">1!!!</div>
     <!-- END CHARTS -->
 
@@ -260,7 +265,7 @@ jQuery(".sadrzaj").hide();
 
     <div class="one_half last">
       <h3>Nastavi istraživati</h3>
-    </div>
+
    <?php
     $sml_rangiraj = img(array(
         'src'=>'images/assets/fm/sml_rangiraj.png',
@@ -316,7 +321,7 @@ jQuery(".sadrzaj").hide();
    ?>
 
 
-           <table id="background-image" style="width:50%;">
+           <table id="background-image" style="width:90%;">
 
 
             <tbody>
@@ -356,7 +361,7 @@ jQuery(".sadrzaj").hide();
             </tbody>
             </table>
 
-
+</div>
 
    <?php
 
@@ -383,9 +388,31 @@ jQuery(".sadrzaj").hide();
   $ch_title2 =/*$this->router->method . " - " . */"Prihod po stanovniku - " . $this->input->post('grad');
   //$ch_title2 =ucwords($ch_title2);
 
+  //there is comment for this area in rashodi view
+  $pie_data = null;
+  $data_i = count($series_data);
+  //echo "$data_i" . "<br>";
+
+    $i = 0;
+
+    foreach ($series_data as $sdata => $value) {
+    if ($i == ($data_i-1)) {
+      $zarez = '';
+    }else{
+      $zarez = ',';
+    }
+    $pie_data .= $value . $zarez;
+    $i++;
+  }
+
+
+
+
+
+
   //control printout for graph data
   // echo "<pre>";
-  // print_r($series_stanovnik);
+  // print_r($series_data);
   //echo "<pre>";
   //Evaded JSON encoded arays needed for pie chart because of other data structure
   // sent regular array with preformated values :P
@@ -413,7 +440,8 @@ jQuery(document).ready(function()
      chart: {
             renderTo: 'cnt',
             type:'pie',
-            width:'600'
+
+
 
          },
          title: {
@@ -430,14 +458,20 @@ jQuery(document).ready(function()
 
           plotOptions: {
                 pie: {
+                    size: "70%",
                     allowPointSelect: true,
                     cursor: 'pointer',
                     dataLabels: {
                         enabled: true,
                         color: '#000000',
+                        distance: 7,
                         connectorColor: '#000000',
+                            style: {
+                                fontWeight:'bold',
+                                fontSize:'11px'
+                            },
                         formatter: function() {
-                            return '<b>'+ this.point.name +'</b> ';
+                            return this.point.name;
                         }
                     }
                 }
@@ -448,9 +482,8 @@ jQuery(document).ready(function()
 
             data: [
            <?php
-            foreach ($series_data as $sdata => $value) {
-              echo $value .',';
-            }
+
+               echo $pie_data;
 
 
            ?>
@@ -461,6 +494,47 @@ jQuery(document).ready(function()
 
 
   });
+
+  // chart1 = new Highcharts.Chart({
+  //    chart: {
+  //           renderTo: 'cnt',
+  //           type: 'pie'
+  //       },
+
+  //       plotOptions: {
+  //           pie: {
+
+  //           }
+  //       },
+
+  //       title: {
+  //           text: '<?php echo $ch_title; ?>'
+  //        },
+
+
+  //         tooltip: {
+  //               formatter: function() {
+  //                   return '<b>'+ this.point.name +'</b>: '+ Highcharts.numberFormat(this.point.y, 2, '.', ',');
+  //               }
+  //             },
+
+  //       series: [{
+  //           data: [
+
+  //              <?php  echo $pie_data; ?>
+  //           ]
+  //       }]
+
+
+
+
+
+
+  // });
+
+
+
+
 
   chart2 = new Highcharts.Chart({
      chart: {

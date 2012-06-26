@@ -61,7 +61,6 @@
 <script type="text/javascript">
 jQuery(document).ready(function() {
 jQuery(".sadrzaj").hide();
-
   //toggle the componenet with class msg_body
   jQuery(".nazivGrupe").css('cursor','pointer');
   jQuery(".nazivGrupe").click(function()
@@ -79,9 +78,9 @@ jQuery(".sadrzaj").hide();
 </script>
 <?php $this->load->view('includes/right_div'); ?>
 <div class="wh" <?php if (!$_POST) {echo "style=\"width:75%;\"";} ?>>
-  <br> <br><h1>Rashodi</h1> <br> <h3>Pregledajte rashode opštine/grada </h3>
+  <br><br>
+  <h1>Prihodi</h1> <br> <h3>Pregledajte prihode opštine/grada </h3>
   <br>
-
   <?php if ($this->session->flashdata('message')): ?>
   <br><div class="error"> <?=$this->session->flashdata('message')?> </div>
   <?php endif;
@@ -95,7 +94,7 @@ jQuery(".sadrzaj").hide();
   <?php $this->load->view('info/_form1');
   $this->view_data = array();
   $series_data = array();
-  $series_stanovnik = array();
+  $series_stanovnik=array();
 
   // if ($_POST) {
   //     echo $this->input->post('grad');
@@ -111,7 +110,7 @@ jQuery(".sadrzaj").hide();
 
           //pull data in groups
           foreach ($table as $record) {
-             $set[$record['grupa_rashoda']][] = $record;
+             $set[$record['grupa_prihoda']][] = $record;
           }
 
 
@@ -120,7 +119,7 @@ jQuery(".sadrzaj").hide();
           // echo "</pre>";
   ?>
                  <div class="contenttitle radiusbottom0">
-                      <h2 class="table"><span>Rashodi
+                      <h2 class="table"><span>Prihodi
                           <?php echo " | Grad:". nbs(1) .$this->input->post('grad'). nbs(1) ."(".$this->input->post('godina'); ?>)</span></h2>
               </div>
 
@@ -148,7 +147,7 @@ jQuery(".sadrzaj").hide();
                               <th class="head1">Stavka</th>
                               <th class="head0">Ukupan iznos (KM)</th>
                               <th class="head1">Procenat (%)</th>
-                              <th class="head0">Rashod po stanovniku (KM)</th>
+                              <th class="head0">Prihod po stanovniku (KM)</th>
 
                           </tr>
                       </thead>
@@ -159,6 +158,7 @@ jQuery(".sadrzaj").hide();
                       $main_proc = null;
                       $main_ps = null;
 
+
                       foreach ($set as $group => $records) {
                       //print "||||||||$group<br>";
                       echo '<tbody class="nazivGrupe">';
@@ -168,16 +168,14 @@ jQuery(".sadrzaj").hide();
                                 </td>
                             </tr>";
                       echo "</tbody>";
-
                       //declare vars to prevent errors and destroy values for next group
                       $tot = null;
                       $procenat = null;
-                      $rash_stanovnik = null;
+                      $prih_stanovnik = null;
                       $td_total=null;
-                      //$main_total = null;
                       $tot_values = null;
                       $tot_stanovnik = null;
-
+                      //$main_total = null;
                       echo "<tbody class=\"sadrzaj\">";
                       foreach ($records as $record) {
 
@@ -186,38 +184,41 @@ jQuery(".sadrzaj").hide();
                       //calculate subtotals - group totals
                       $tot += $record['ukupan_iznos'];
                       $procenat += $record['procenat'];
-                      $rash_stanovnik += $record['rashod_stanovnik'];
+                      $prih_stanovnik += $record['prihod_stanovnik'];
 
 
                       }
+
 
                       $td_total .="<tr class=\"$group"." total\">";
                       //$td_total .="<td>!!!!</td>";
                       $td_total .="<td colspan=\"2\"><h4>Total:</h4></td>";
                       $td_total .="<td><h4>".number_format($tot, $decimals=2, $dec_point = '.', $thousands_sep = ',')."</h4></td>";
-                      $td_total .="<td><h4>".number_format($procenat, $decimals=2, $dec_point = '.', $thousands_sep = ',')."</h4></td>";
-                      $td_total .="<td><h4>".number_format($rash_stanovnik, $decimals=2, $dec_point = '.', $thousands_sep = ',')."</h4></td>";
+                      $td_total .="<td><h4>".number_format($procenat,  $decimals=2, $dec_point = '.', $thousands_sep = ',')."</h4></td>";
+                      $td_total .="<td><h4>".number_format($prih_stanovnik,  $decimals=2, $dec_point = '.', $thousands_sep = ',')."</h4></td>";
                       $td_total .="</tr>";
                       echo $td_total;
                       echo "</tbody>";
 
+
+
                       //create array of totals for graph
                       //$tot_values[]=$tot;
-                      $tot_stanovnik[]=$rash_stanovnik;
+                      $tot_stanovnik[]=$prih_stanovnik;
                       //calculate main table totals
                       $main_total += $tot;
                       $main_proc += $procenat;
-                      $main_ps += $rash_stanovnik;
+                      $main_ps += $prih_stanovnik;
 
                       //release table part rendered for next group
                       $td_total = 0;
                       $arr = "["."'".$group."'". "," .$tot . "]";
+                      //$arr1 = "["."'".$group."'". "," .$prih_stanovnik . "]";
                       //pass data for graph like array (name  array data)
                       //$series_data[] = array('name'=>$group, 'data'=>$tot_values);
                       $series_data[] =$arr;
-
                       $series_stanovnik[] = array('name'=>$group, 'data'=>$tot_stanovnik);
-
+                      //$series_stanovnik[] = $arr1;
                       } ?>
 
                       <tfoot>
@@ -225,28 +226,29 @@ jQuery(".sadrzaj").hide();
                       <th class="head0">&nbsp;</th>
                       <th class="head1">Ukupno</th>
                       <th class="head0">Total:<?php echo number_format($main_total, $decimals=2, $dec_point = '.', $thousands_sep = ','); ?></th>
-                      <th class="head1"><?php echo number_format($main_proc, $decimals=2, $dec_point = '.', $thousands_sep = ','); ?></th>
-                      <th class="head0"><?php echo number_format($main_ps, $decimals=2, $dec_point = '.', $thousands_sep = ','); ?></th>
+                      <th class="head1"><?php echo number_format($main_proc,  $decimals=2, $dec_point = '.', $thousands_sep = ','); ?></th>
+                      <th class="head0"><?php echo number_format($main_ps,  $decimals=2, $dec_point = '.', $thousands_sep = ','); ?></th>
 
                   </tr>
               </tfoot>
           </table>
-  <br clear="all">
-  <br>
+  <br clear="all"> <br>
+
+
   <div id="charts" style="text-align:center;">
     <!-- START CHARTS by total and  prihod_stanovnik -->
-    <div id="cnt" style="float:left;"> </div>
-    <div id="cnt1" style="margin-left:470px;"> </div>
+    <div id="cnt" style="float:left;">1!!!</div>
+    <div id="cnt1" style="margin-left:470px;">1!!!</div>
     <!-- END CHARTS -->
 
-
     <hr>
+    <br><br>
     <br clear="all">
 
     <!-- START Informacije opstina i meni -->
     <div class="one_half">
       <?php foreach ($opcina_arr as $opcine => $value):?>
-      <h3>Informacije o opštini <?php echo $value->opcina; ?></h3>
+      <h3>Informacije o  <?php echo $value->opcina; ?></h3>
         <br>
         <p>
           <?php echo $value->info; ?>
@@ -258,10 +260,9 @@ jQuery(".sadrzaj").hide();
 
     <div class="one_half last">
       <h3>Nastavi istraživati</h3>
-
- <?php
-
-   $sml_rangiraj = img(array(
+    </div>
+   <?php
+    $sml_rangiraj = img(array(
         'src'=>'images/assets/fm/sml_rangiraj.png',
         'height'=>'33',
         'class'=>'fade'
@@ -299,21 +300,28 @@ jQuery(".sadrzaj").hide();
         ));
 
 
+      $grey = img(array(
+        'src'=>'images/assets/fm/grey.png',
+        'height'=>'33',
+        'class'=>'fade'
 
-   echo form_open('prihodi', array('name'=>'istrazi', 'class'=>'stdform'));
+        ));
+
+
+
+   echo form_open('rashodi', array('name'=>'istrazi', 'class'=>'stdform'));
 
    echo form_hidden('grad', $this->input->post('grad'));
    echo form_hidden('godina', $this->input->post('godina'));
    ?>
 
 
-
-            <table id="background-image" style="width:90%;">
+           <table id="background-image" style="width:50%;">
 
 
             <tbody>
             <tr>
-            <td width="60%">Pregledaj prihode za istu opštinu/grad</td>
+            <td width="60%">Pregledaj rashode za istu opštinu/grad</td>
             <td style="text-align:center;"> <?php echo form_submit('istrazi', 'Istraži'); ?></td>
 
 
@@ -327,7 +335,7 @@ jQuery(".sadrzaj").hide();
 
             <tr>
             <td>Rangiraj opštine/gradove</td>
-            <td style="text-align:center;"> <?php echo anchor('#', $sml_rangiraj); ?> </td>
+            <td style="text-align:center;"> <?php echo anchor('rangiraj', $sml_rangiraj); ?> </td>
             </tr>
 
             <tr>
@@ -347,87 +355,49 @@ jQuery(".sadrzaj").hide();
 
             </tbody>
             </table>
-        </div>
+
+
 
    <?php
 
 
+
    echo form_close();
+    ?>
 
-
-     ?>
-    <!-- END informacije -->
   </div>
   <br clear="all">
+  <!-- $series_data[] = array('name'=>'Alastair', 'data'=>array(3,6,9)); -->
   <?php endif;
-  //$this->view_data['series_data'] = json_encode($series_data);
+
+
+  //obsoltete for pie charts see comment further down
+  // $this->view_data['series_data'] = json_encode($series_data);
+
   $this->view_data['series_stanovnik'] = json_encode($series_stanovnik);
 
-
-  //Chart names
   $ch_title =$this->router->method . " - " . $this->input->post('grad');
   $ch_title =ucwords($ch_title);
 
 
-  $ch_title2 =/*$this->router->method . " - " . */"Rashod po stanovniku - " . $this->input->post('grad');
-  //END chart names
+  $ch_title2 =/*$this->router->method . " - " . */"Prihod po stanovniku - " . $this->input->post('grad');
+  //$ch_title2 =ucwords($ch_title2);
 
-
-//******BLOCK included to fix IE rendering of pie chart, it seems *************
-//****** that  IE when series DATA have , added on the end and no following stringof dtata
-// does not render PIE chart ....
-
-
-// so lets call empty var for chart data to prevent errors
-  $pie_data = null;
-  //lets count member of array of data used for pie chart
-  $data_i = count($series_data);
-
-  //this is control echo
-  //echo "$data_i" . "<br>";
-
-    //so declrae var  0 for counting purposes
-    $i = 0;
-    //iterate array
-    foreach ($series_data as $sdata => $value) {
-
-      //chack if it is turn for last array memeber if it is var is empty else var is ','
-          if ($i == ($data_i-1)) {
-            $zarez = '';
-          }else{
-            $zarez = ',';
-          }
-
-    //add rezult to var used for chart
-    $pie_data .= $value . $zarez;
-
-    //add one :)
-    $i++;
-  }
-
-
-
-
-
-
-  //
   //control printout for graph data
   // echo "<pre>";
-  // print_r($series_data);
-  // echo "<pre>";
-  // echo $this->view_data['series_data'];
+  // print_r($series_stanovnik);
+  //echo "<pre>";
+  //Evaded JSON encoded arays needed for pie chart because of other data structure
+  // sent regular array with preformated values :P
+  //print_r($series_stanovnik);
+     // foreach ($series_data as $sdata => $value) {
+     //          echo $value .',';
+     //        }
 
-
-
-
-  ?>
+   ?>
     <br clear="all">
 
 </div>
-
-
-<!-- START JS HIGHCHARTS -->
-<!-- Call highchart params with passed values from table search -->
 
 
 <script type="text/javascript">
@@ -452,7 +422,7 @@ jQuery(document).ready(function()
 
          tooltip: {
                 formatter: function() {
-                    return '<b>'+ this.point.name +'</b>: '+  Highcharts.numberFormat(this.point.y, 2, '.', ',');
+                    return '<b>'+ this.point.name +'</b>: '+ Highcharts.numberFormat(this.point.y, 2, '.', ',');
                 }
               },
 
@@ -466,10 +436,6 @@ jQuery(document).ready(function()
                         enabled: true,
                         color: '#000000',
                         connectorColor: '#000000',
-                         style: {
-                                fontWeight:'bold',
-                                fontSize:'11px'
-                            },
                         formatter: function() {
                             return '<b>'+ this.point.name +'</b> ';
                         }
@@ -482,7 +448,10 @@ jQuery(document).ready(function()
 
             data: [
            <?php
-              echo "$pie_data";
+            foreach ($series_data as $sdata => $value) {
+              echo $value .',';
+            }
+
 
            ?>
 
