@@ -27,6 +27,12 @@ HTML;
                 }
 
 
+                if (isset($stavka_arr)) {
+                    echo "<br><br><strong>Odaberite stavku: </strong><br><br>";
+                    echo form_dropdown('stavka', $stavka_arr);
+                }
+
+
 
 
 

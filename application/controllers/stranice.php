@@ -62,6 +62,7 @@ public function __construct()
 
         $this->form_validation->set_rules('name',  'Name',  'required');
         $this->form_validation->set_rules('email',  'Email',  'required|valid_email');
+        //$this->form_validation->set_rules('kontakt',  'Kontakt',  'required');
         $this->form_validation->set_rules('poruka',  'Poruka',  'required');
 
           if(!$this->form_validation->run()==FALSE) {
@@ -69,12 +70,23 @@ public function __construct()
             $name = $this->input->post('name');
             $email = $this->input->post('email');
             $poruka = $this->input->post('poruka');
+            $kontakt = $this->input->post('kontakt');
+
+            switch ($kontakt) {
+              case 'tim':
+                $toEmail = array('zkarkin@fiskalnimonitor.ba', 'n.dervish@fiskalnimonitor.ba', 'amar.hajrovic@ssst.edu.ba');
+                break;
+
+              default:
+                $toEmail = 'info@fiskalnimonitor.ba';
+                break;
+            }
 
             //control echo for vars
             //echo "$name | $email | $poruka";
 
             $this->email->from($email, $name);
-            $this->email->to('info@fiskalnimonitor.ba');
+            $this->email->to($toEmail);
             $this->email->subject('Kontakt sa stranice');
             $this->email->message($poruka);
 

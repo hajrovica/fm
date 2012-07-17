@@ -51,9 +51,16 @@ echo $img;
             Sarajevska škola za nauku i tehnologiju<br>
             Bistrik 7, 71000 Sarajevo <br>
             Bosna i Hercegovina <br>
+            <br>
+            Tel: +387 33 563 030 <br>
+            <br>
+            Kontakt e-mailovi: <br>
 
-            Tel: +387 33 563 030
-
+            Za generalne informacije možete koristiti formu. <br>
+            <br>
+            Pitanja za članove tima:<br>
+            <?php echo safe_mailto('zkarkin@fiskalnimonitor.ba',  'zkarkin@fiskalnimonitor.ba'); ?>,<br>
+            <?php echo safe_mailto('n.dervish@fiskalnimonitor.ba',  'n.dervish@fiskalnimonitor.ba'); ?>,<br>
         </p>
     </div>
 

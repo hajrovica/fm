@@ -122,6 +122,53 @@ class Prihodi extends CI_Model {
        }
     }
 
+    function getStavka_Jq(){
+      $data = $this->getGrupa('rashodi');
+      echo "<pre>";
+      print_r($data);
+
+      //$dd = null;
+      $ddarr = array();
+      foreach ($data as $key => $value) {
+        $dd = $value['grupa_rashoda'] . ' >> ';
+        $dd .= $this->getStavka($value['grupa_rashoda']);
+
+        $ddarr[] .= $dd;
+      }
+      print_r($ddarr);
+    }
+
+    // function to build acceptable array for select - why did not i maded as part of this function?!
+    //function for uporedi opstine we will get stavka column of rashodi where group is something
+    function getStavka($group = null){
+      $this->db->select('stavka');
+      $this->db->where('grupa_rashoda', $group);
+      //$this->db->distinct();
+
+      $query = $this->db->get('rashodi');
+
+       $arr = null;
+       if ($query) {
+            $data = $query->result();
+
+            // echo "<pre>";
+            // echo $data;
+            // print_r($data);
+
+            $da = null;
+            foreach ($data as $val => $value) {
+            //so we put $grupa in array building statment to get correct values
+            //print_r($value);
+           $da .= $value->stavka . ' >> ';
+            return $da;
+            //$arr[$value->stavka]=$value->stavka;
+        }
+        //echo "$arr";
+        //return $arr;
+
+
+      }
+    }
 
     function getOpcina($var)
     {
@@ -211,7 +258,9 @@ class Prihodi extends CI_Model {
       $arr = $query->result_array();
 
       foreach ($arr as $val => $value) {
-        $arry[][$value['grad']] = $value['ukupan_iznos'];
+        //$arry[][$value['grad']] = $value['ukupan_iznos'];
+        //Change to show expenses by citizen
+        $arry[][$value['grad']] = $value['rashod_stanovnik'];
 
       }
 
