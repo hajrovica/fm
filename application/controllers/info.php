@@ -216,6 +216,7 @@ class Info extends MY_Controller {
            // echo $this->input->post('grad') . "AND " . $this->input->post('godina') . $this->input->post('grupa') . "<hr>";
 
             $this->Prihodi->getStavka_Jq();
+            // $this->Prihodi->getStavka();
 
             //declare shorter vars for ease reading
             $grad = $this->input->post('grad');
@@ -226,60 +227,60 @@ class Info extends MY_Controller {
             $grupa = $this->input->post('grupa');
 
             //ok lets get stavke from DB
-            $this->view_data['stavka_arr'] = $this->Prihodi->getStavka($grupa);
+            //$this->view_data['stavka_arr'] = $this->Prihodi->getStavka($grupa);
 
-            $stavka = $this->input->post('stavka');
-
-
-            if ($stavka_arr) {
-
-                          //so lets query db with selected values
-
-                          //city ONE
-                          $arr1 = $this->Prihodi->sumGrupa($grad, $godina, $grupa);
-
-                          //city two
-                          $arr2 = $this->Prihodi->sumGrupa($grad2, $godina, $grupa);
-
-                          //city THREE
-                          $arr3 = $this->Prihodi->sumGrupa($grad3, $godina, $grupa);
-
-                          //ok so lets get sums of those arrays
-
-                          $sum1 = array_sum($arr1);
-                          $sum2 = array_sum($arr2);
-                          $sum3 = array_sum($arr3);
+            // $stavka = $this->input->post('stavka');
 
 
-                          //so lets send variables to view for our chart use
+            // if ($stavka_arr) {
 
-                          //cities - first :P
+            //               //so lets query db with selected values
 
-                          $this->view_data['grad1'] = $grad;
-                          $this->view_data['grad2'] = $grad2;
-                          $this->view_data['grad3'] = $grad3;
+            //               //city ONE
+            //               $arr1 = $this->Prihodi->sumGrupa($grad, $godina, $grupa);
 
-                          //Ok passing of formatted values for charts does not work (issue of . and , in number)
-                          // so we are going back to original unformatted vals
+            //               //city two
+            //               $arr2 = $this->Prihodi->sumGrupa($grad2, $godina, $grupa);
 
-                          $this->view_data['sum1'] = $sum1;
-                          $this->view_data['sum2'] = $sum2;
-                          $this->view_data['sum3'] = $sum3;
+            //               //city THREE
+            //               $arr3 = $this->Prihodi->sumGrupa($grad3, $godina, $grupa);
 
+            //               //ok so lets get sums of those arrays
 
-                    //***************** START CONTROL PRINTOUT *********************//
-
-                          //so lets spit formatted sums just for fun of it
-
-                          $frmt_sum1 = number_format($sum1, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
-                          $frmt_sum2 = number_format($sum2, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
-                          $frmt_sum3 = number_format($sum3, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
+            //               $sum1 = array_sum($arr1);
+            //               $sum2 = array_sum($arr2);
+            //               $sum3 = array_sum($arr3);
 
 
+            //               //so lets send variables to view for our chart use
 
-                         // echo $sum1 . ' ---- ' . $sum2 . ' ---- ' .$sum3 . "<br";
+            //               //cities - first :P
 
-            }
+            //               $this->view_data['grad1'] = $grad;
+            //               $this->view_data['grad2'] = $grad2;
+            //               $this->view_data['grad3'] = $grad3;
+
+            //               //Ok passing of formatted values for charts does not work (issue of . and , in number)
+            //               // so we are going back to original unformatted vals
+
+            //               $this->view_data['sum1'] = $sum1;
+            //               $this->view_data['sum2'] = $sum2;
+            //               $this->view_data['sum3'] = $sum3;
+
+
+            //         //***************** START CONTROL PRINTOUT *********************//
+
+            //               //so lets spit formatted sums just for fun of it
+
+            //               $frmt_sum1 = number_format($sum1, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
+            //               $frmt_sum2 = number_format($sum2, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
+            //               $frmt_sum3 = number_format($sum3, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
+
+
+
+            //              // echo $sum1 . ' ---- ' . $sum2 . ' ---- ' .$sum3 . "<br";
+
+            // }
 
           }
 
@@ -292,7 +293,7 @@ class Info extends MY_Controller {
 
 
           //call view for this function
-           $this->_outpt('info/uporedi');
+          // $this->_outpt('info/uporedi');
          }
 
      function rangiraj(){

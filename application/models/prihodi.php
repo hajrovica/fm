@@ -123,27 +123,90 @@ class Prihodi extends CI_Model {
     }
 
     function getStavka_Jq(){
-      $data = $this->getGrupa('rashodi');
-      echo "<pre>";
-      print_r($data);
 
-      //$dd = null;
-      $ddarr = array();
-      foreach ($data as $key => $value) {
-        $dd = $value['grupa_rashoda'] . ' >> ';
-        $dd .= $this->getStavka($value['grupa_rashoda']);
 
-        $ddarr[] .= $dd;
+      // echo("<pre>");
+      // print_r($data);
+
+        $jqSelect = array();
+        $dat = null;
+        $data = $this->getGrupa('rashodi');
+
+
+          foreach ($data as $key => $value) {
+
+           $val = $value['grupa_rashoda'];
+
+           $dat .= $this->Stavka_Jq($val);
+
+
+
+
       }
-      print_r($ddarr);
+
+
+      $dat = explode('|', $dat);
+
+     echo "<pre>";
+
+     print_r($dat);
+
+     $dd = null;
+
+     $dd .= "<select>";
+        foreach ($dat as $key => $value) {
+          $dat = explode(' >> ', $value);
+          print_r($dat);
+          echo $dat[1] . '----' . $value . "<br>";
+        }
+
+     $dd .= "</select>";
+
+
+      // echo "<pre>";
+      // print_r($jqSelect);
+
+
+
+    }
+
+    function Stavka_Jq($group = null){
+      // $group = 'TEKUĆI RASHODI';
+
+      $this->db->select('stavka');
+      $this->db->distinct();
+      $this->db->where('grupa_rashoda', $group);
+
+      $query = $this->db->get('rashodi');
+      echo $query->num_rows();
+
+      $val = $query->result();
+
+      if ($val) {
+
+          $ret = null;
+          foreach ($val as $row) {
+            $ret .= $group . ' >> '. $row->stavka . '|';
+
+
+          }
+
+          //echo $ret;
+          return $ret;
+
+        }
+
     }
 
     // function to build acceptable array for select - why did not i maded as part of this function?!
     //function for uporedi opstine we will get stavka column of rashodi where group is something
     function getStavka($group = null){
+      $group = 'TEKUĆI RASHODI';
+
       $this->db->select('stavka');
+      $this->db->distinct();
       $this->db->where('grupa_rashoda', $group);
-      //$this->db->distinct();
+
 
       $query = $this->db->get('rashodi');
 
@@ -152,23 +215,29 @@ class Prihodi extends CI_Model {
             $data = $query->result();
 
             // echo "<pre>";
-            // echo $data;
+            // echo "<hr>";
+            // // echo $data;
             // print_r($data);
 
             $da = null;
             foreach ($data as $val => $value) {
             //so we put $grupa in array building statment to get correct values
             //print_r($value);
-           $da .= $value->stavka . ' >> ';
-            return $da;
+            $da .= $value->stavka . ' >> ';
+
+
             //$arr[$value->stavka]=$value->stavka;
         }
+        echo $da;
         //echo "$arr";
         //return $arr;
 
 
       }
     }
+
+
+
 
     function getOpcina($var)
     {
