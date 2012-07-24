@@ -58,6 +58,8 @@
 
 </style>
 
+ <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/ddrop.js"></script>
+
 <script type="text/javascript">
 jQuery(document).ready(function() {
 jQuery(".sadrzaj").hide();
@@ -72,6 +74,7 @@ jQuery(".sadrzaj").hide();
       height: 'easeOutBounce'
     }});
   });
+
 
 });
 
@@ -234,6 +237,7 @@ jQuery(".sadrzaj").hide();
 </div>
 
 
+
 <script type="text/javascript">
 
 var chart2; // globally available
@@ -356,3 +360,4 @@ chart2 = new Highcharts.Chart({
 
 });
 </script>
+<script type="text/javascript">$("#uporedi").dynamicDropdown();</script>

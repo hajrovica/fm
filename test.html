@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/ddrop.js"></script>
+
+
+<select id="uporedi" class="upr">
+    <option value="Izdaci za nefinansijsku imovinu">KAPITALNI RASHODI &gt;&gt; Izdaci za nefinansijsku imovinu</option>
+    <option value="Budzetska rezerva">KAPITALNI RASHODI &gt;&gt; Budzetska rezerva</option>
+    <option value="Izdaci za finansijsku imovinu">OTPLATA DUGOVA &gt;&gt; Izdaci za finansijsku imovinu</option>
+    <option value="Test1">rsh &gt;&gt; Test1</option>
+    <option value="Test2">rsh &gt;&gt; Test2</option>
+    <option value="Plaće i naknade troškova zaposlenih">TEKUĆI RASHODI &gt;&gt; Plaće i naknade troškova zaposlenih</option>
+    <option value="Doprinosi poslodavca i ostali doprinosi">TEKUĆI RASHODI &gt;&gt; Doprinosi poslodavca i ostali doprinosi</option>
+    <option value="Izdaci za materijal, sitni inventar i usluge">TEKUĆI RASHODI &gt;&gt; Izdaci za materijal, sitni inventar i usluge</option>
+    <option value="Tekući  transferi">TEKUĆI RASHODI &gt;&gt; Tekući  transferi</option>
+    <option value="Kapitalni transferi ">TEKUĆI RASHODI &gt;&gt; Kapitalni transferi </option>
+    <option value="Izdaci za kamate ">TEKUĆI RASHODI &gt;&gt; Izdaci za kamate </option>
+</select>
+
+
+<script type="text/javascript">
+
+$(".upr").dynamicDropdown({
+      "delimiter" : " >> ",
+      "className" : "dynamic-dropdown"
+    });
+
+</script>
+
+
+</body>
+</html>

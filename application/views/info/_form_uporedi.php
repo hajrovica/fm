@@ -23,7 +23,8 @@ HTML;
 
                 if (isset($grupa_arr)) {
                     echo "<br><br><strong>Odaberite kategoriju rashoda za poređenje podataka: </strong><br><br>";
-                    echo form_dropdown('grupa', $grupa_arr);
+                    //echo form_dropdown('grupa', $grupa_arr);
+                    echo "$grupa_arr";
                 }
 
 
@@ -51,6 +52,14 @@ HTML;
                 <?php endif ?><button class="submit radius2">Prikaži</button>
 
             <?php echo form_close(); ?>
+
+
+
+
+
+                </script>
+
+
 
             </div>
             <br>

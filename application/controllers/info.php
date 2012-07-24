@@ -206,7 +206,8 @@ class Info extends MY_Controller {
           //assign grad to multiple vars
           $this->view_data['grad_arr'] = $this->view_data['grad_arr1'] = $this->view_data['grad_arr2'] = $grad;
           $this->view_data['godina_arr'] = $this->Prihodi->selectGodina('rashodi');
-          $this->view_data['grupa_arr'] = $this->Prihodi->selectGrupa('rashodi');
+          //$this->view_data['grupa_arr'] = $this->Prihodi->selectGrupa('rashodi');
+          $this->view_data['grupa_arr'] = $dd = $this->Prihodi->getStavka_Jq();;
 
           $this->view_data['godina_cnt'] = count($this->view_data['godina_arr']);
 
@@ -215,7 +216,6 @@ class Info extends MY_Controller {
           if ($_POST) {
            // echo $this->input->post('grad') . "AND " . $this->input->post('godina') . $this->input->post('grupa') . "<hr>";
 
-            $this->Prihodi->getStavka_Jq();
             // $this->Prihodi->getStavka();
 
             //declare shorter vars for ease reading
@@ -293,7 +293,7 @@ class Info extends MY_Controller {
 
 
           //call view for this function
-          // $this->_outpt('info/uporedi');
+          $this->_outpt('info/uporedi');
          }
 
      function rangiraj(){

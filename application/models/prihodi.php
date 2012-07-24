@@ -144,25 +144,27 @@ class Prihodi extends CI_Model {
 
       }
 
-
       $dat = explode('|', $dat);
+      array_pop($dat);
 
-     echo "<pre>";
+      // echo "<pre>";
+      // print_r($dat);
 
-     print_r($dat);
 
      $dd = null;
 
-     $dd .= "<select>";
+     $dd .= "<select id=\"uporedi\">";
         foreach ($dat as $key => $value) {
           $dat = explode(' >> ', $value);
-          print_r($dat);
-          echo $dat[1] . '----' . $value . "<br>";
+          //print_r($dat);
+          $dd .= "<option value=\"$dat[1]\">$value</option>";
+
+         // $dat[1] . '-' . $value . "<br>";
         }
 
      $dd .= "</select>";
-
-
+     return $dd;
+     //echo "$dd";
       // echo "<pre>";
       // print_r($jqSelect);
 
@@ -178,20 +180,23 @@ class Prihodi extends CI_Model {
       $this->db->where('grupa_rashoda', $group);
 
       $query = $this->db->get('rashodi');
-      echo $query->num_rows();
+      //echo $query->num_rows();
 
       $val = $query->result();
 
       if ($val) {
 
           $ret = null;
-          foreach ($val as $row) {
-            $ret .= $group . ' >> '. $row->stavka . '|';
 
+          foreach ($val as $row) {
+
+              $ret .=  $group . ' >> '. $row->stavka. '|';
+
+            // $ret .= '*'.$group . ' - ' . $row->stavka. '<br>';
 
           }
 
-          //echo $ret;
+         // echo $ret;
           return $ret;
 
         }
