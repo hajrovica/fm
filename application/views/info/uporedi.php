@@ -1,3 +1,4 @@
+<?php echo $json; ?>
 <style type="text/css">
 
 /*  Table design*/
@@ -58,10 +59,16 @@
 
 </style>
 
- <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/ddrop.js"></script>
+
+<!-- This is old Jquery -->
+<!-- ' <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/ddrop.js"></script>'
+ -->
+
+
 
 <script type="text/javascript">
 jQuery(document).ready(function() {
+
 jQuery(".sadrzaj").hide();
   //toggle the componenet with class msg_body
   jQuery(".nazivGrupe").css('cursor','pointer');
@@ -245,6 +252,37 @@ var chart2; // globally available
 jQuery(document).ready(function()
 {
 
+  jQuery("#uporedi").change(function() {
+
+                                alert('Something');
+                                var $dropdown = $(this);
+
+                                $.getJSON("<?php echo $json;?>", function(data) {
+
+                                    var key = $dropdown.val();
+                                    var vals = [];
+
+                                    switch(key) {
+                                        case 'rsh':
+                                            vals = data.rsh.split(",");
+                                            break;
+                                        // case 'snacks':
+                                        //     vals = data.snacks.split(",");
+                                        //     break;
+                                        case 'base':
+                                            vals = ['Please choose from above'];
+                                    }
+
+                                    var $secondChoice = $("#stavka");
+                                    $secondChoice.empty();
+                                    $.each(vals, function(index, value) {
+                                        $secondChoice("<option>" + value + "</option>");
+                                    });
+
+                                });
+                            });
+
+
 chart2 = new Highcharts.Chart({
             chart: {
                 renderTo: 'cnt',
@@ -360,4 +398,6 @@ chart2 = new Highcharts.Chart({
 
 });
 </script>
-<script type="text/javascript">$("#uporedi").dynamicDropdown();</script>
+
+<!-- OLD dropdown script
+<script type="text/javascript">$("#uporedi").dynamicDropdown();</script> -->

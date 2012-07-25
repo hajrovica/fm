@@ -131,39 +131,41 @@ class Prihodi extends CI_Model {
         $jqSelect = array();
         $dat = null;
         $data = $this->getGrupa('rashodi');
-
+        //$dat = array();
 
           foreach ($data as $key => $value) {
 
            $val = $value['grupa_rashoda'];
 
-           $dat .= $this->Stavka_Jq($val);
+           $dat[$val] = $this->Stavka_Jq($val);
 
 
 
 
       }
 
-      $dat = explode('|', $dat);
-      array_pop($dat);
+      // echo "<pre>";
+      // print_r($dat);
+      //$dat = explode('|', $dat);
+      //array_pop($dat);
 
       // echo "<pre>";
       // print_r($dat);
-
+       $jsData = json_encode($dat);
 
      $dd = null;
 
      $dd .= "<select id=\"uporedi\">";
         foreach ($dat as $key => $value) {
-          $dat = explode(' >> ', $value);
+          //$dat = explode(' >> ', $value);
           //print_r($dat);
-          $dd .= "<option value=\"$dat[1]\">$value</option>";
+          $dd .= "<option value=\"$key\">$key</option>";
 
          // $dat[1] . '-' . $value . "<br>";
         }
 
      $dd .= "</select>";
-     return $dd;
+     return array('dd'=>$dd, 'json'=>$jsData);
      //echo "$dd";
       // echo "<pre>";
       // print_r($jqSelect);
@@ -188,14 +190,21 @@ class Prihodi extends CI_Model {
 
           $ret = null;
 
+          $arr_cnt = count($val);
+          $i= 0;
           foreach ($val as $row) {
-
-              $ret .=  $group . ' >> '. $row->stavka. '|';
-
+            $i ++;
+            // $ret .=  $group . ' >> '. $row->stavka. '|';
             // $ret .= '*'.$group . ' - ' . $row->stavka. '<br>';
 
-          }
+            $ret .= $row->stavka;
+            if ($i<$arr_cnt) {
 
+                $ret .= ',';
+            }
+
+          }
+          //print_r($ret);
          // echo $ret;
           return $ret;
 

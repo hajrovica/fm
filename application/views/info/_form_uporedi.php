@@ -25,12 +25,17 @@ HTML;
                     echo "<br><br><strong>Odaberite kategoriju rashoda za poređenje podataka: </strong><br><br>";
                     //echo form_dropdown('grupa', $grupa_arr);
                     echo "$grupa_arr";
+
+                    echo '<select id="stavka">
+                            <option>Odaberite grupu </option>
+                            </select>';
                 }
 
 
                 if (isset($stavka_arr)) {
                     echo "<br><br><strong>Odaberite stavku: </strong><br><br>";
                     echo form_dropdown('stavka', $stavka_arr);
+
                 }
 
 
@@ -57,7 +62,6 @@ HTML;
 
 
 
-                </script>
 
 
 
