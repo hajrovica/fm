@@ -1,4 +1,3 @@
-<?php echo $json; ?>
 <style type="text/css">
 
 /*  Table design*/
@@ -61,8 +60,8 @@
 
 
 <!-- This is old Jquery -->
-<!-- ' <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/ddrop.js"></script>'
- -->
+<!-- ' -->
+
 
 
 
@@ -399,5 +398,5 @@ chart2 = new Highcharts.Chart({
 });
 </script>
 
-<!-- OLD dropdown script
-<script type="text/javascript">$("#uporedi").dynamicDropdown();</script> -->
+<!-- OLD dropdown script-->
+<script type="text/javascript">$("#uporedi").dynamicDropdown();</script>

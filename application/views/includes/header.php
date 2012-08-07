@@ -41,6 +41,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
+
 <!-- HighCharts includes -->
     <script type="text/javascript" src="<?php echo base_url(); ?>public/jquery.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>public/highcharts/js/highcharts.js"></script>
