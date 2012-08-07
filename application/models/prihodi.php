@@ -220,9 +220,7 @@ class Prihodi extends CI_Model {
       $arr = $query->result_array();
 
       foreach ($arr as $val => $value) {
-        //This was original total we looked now
-        //$arry[] = $value['ukupan_iznos'];
-        $arry[] = $value['rashod_stanovnik'];
+        $arry[] = $value['ukupan_iznos'];
       }
 
      return $arry;
