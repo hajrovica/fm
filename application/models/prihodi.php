@@ -215,7 +215,7 @@ class Prihodi extends CI_Model {
     // function to build acceptable array for select - why did not i maded as part of this function?!
     //function for uporedi opstine we will get stavka column of rashodi where group is something
     function getStavka($group = null){
-      $group = 'TEKUĆI RASHODI';
+      //$group = 'TEKUĆI RASHODI';
 
       $this->db->select('stavka');
       $this->db->distinct();
@@ -228,23 +228,25 @@ class Prihodi extends CI_Model {
        if ($query) {
             $data = $query->result();
 
-            // echo "<pre>";
+            //echo "<pre>";
             // echo "<hr>";
-            // // echo $data;
-            // print_r($data);
+            // echo $data;
+            //print_r($data);
 
-            $da = null;
+
+            //$da = null;
             foreach ($data as $val => $value) {
             //so we put $grupa in array building statment to get correct values
             //print_r($value);
-            $da .= $value->stavka . ' >> ';
+            //$da .= $value->stavka . ' >> ';
+            $arr[$value->stavka]=$value->stavka;
 
 
             //$arr[$value->stavka]=$value->stavka;
         }
-        echo $da;
+        //echo $da;
         //echo "$arr";
-        //return $arr;
+        return $arr;
 
 
       }
@@ -294,11 +296,17 @@ class Prihodi extends CI_Model {
      }
    }
 
+
    function sumGrupa($grad, $godina, $grupa){
-    //$this->db->select('ukupan_iznos');
+    //$this->db->select('rashod_stanovnik');
     $this->db->where('grad', $grad);
     $this->db->where('godina', $godina);
-    $this->db->where('grupa_rashoda', $grupa);
+
+    //this was used for group selection
+    //$this->db->where('grupa_rashoda', $grupa);
+
+    //now we need stavka selection
+    $this->db->where('stavka',  $grupa);
 
 
     $query = $this->db->get('rashodi');
@@ -308,7 +316,12 @@ class Prihodi extends CI_Model {
       $arr = $query->result_array();
 
       foreach ($arr as $val => $value) {
-        $arry[] = $value['ukupan_iznos'];
+
+        //when we looked up sumo f rashod we used this option
+        //$arry[] = $value['ukupan_iznos'];
+
+        //now when we are based on person we are using
+        $arry[] = $value['rashod_stanovnik'];
       }
 
      return $arry;

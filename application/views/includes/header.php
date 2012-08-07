@@ -110,7 +110,7 @@ foreach($css_files as $file): ?>
                  <?php
                     echo anchor_popup('http://www.facebook.com/FiskalniMonitorBiH', $fb);
                     echo anchor_popup('#', $tw);
-                    echo anchor_popup('kontakt', $mail);
+                    echo anchor('kontakt', $mail);
                 ?>
 
               </div>
