@@ -122,8 +122,95 @@ class Prihodi extends CI_Model {
        }
     }
 
+    function getStavka_Jq(){
 
 
+      // echo("<pre>");
+      // print_r($data);
+
+        $jqSelect = array();
+        $dat = null;
+        $data = $this->getGrupa('rashodi');
+        //$dat = array();
+
+          foreach ($data as $key => $value) {
+
+           $val = $value['grupa_rashoda'];
+
+           $dat[$val] = $this->Stavka_Jq($val);
+
+
+
+
+      }
+
+      // echo "<pre>";
+      // print_r($dat);
+      //$dat = explode('|', $dat);
+      //array_pop($dat);
+
+      // echo "<pre>";
+      // print_r($dat);
+       $jsData = json_encode($dat);
+
+     $dd = null;
+
+     $dd .= "<select id=\"uporedi\">";
+        foreach ($dat as $key => $value) {
+          //$dat = explode(' >> ', $value);
+          //print_r($dat);
+          $dd .= "<option value=\"$key\">$key</option>";
+
+         // $dat[1] . '-' . $value . "<br>";
+        }
+
+     $dd .= "</select>";
+     return array('dd'=>$dd, 'json'=>$jsData);
+     //echo "$dd";
+      // echo "<pre>";
+      // print_r($jqSelect);
+
+
+
+    }
+
+    function Stavka_Jq($group = null){
+      // $group = 'TEKUĆI RASHODI';
+
+      $this->db->select('stavka');
+      $this->db->distinct();
+      $this->db->where('grupa_rashoda', $group);
+
+      $query = $this->db->get('rashodi');
+      //echo $query->num_rows();
+
+      $val = $query->result();
+
+      if ($val) {
+
+          $ret = null;
+
+          $arr_cnt = count($val);
+          $i= 0;
+          foreach ($val as $row) {
+            $i ++;
+            // $ret .=  $group . ' >> '. $row->stavka. '|';
+            // $ret .= '*'.$group . ' - ' . $row->stavka. '<br>';
+
+            $ret .= $row->stavka;
+            if ($i<$arr_cnt) {
+
+                $ret .= ',';
+            }
+
+          }
+          //print_r($ret);
+         // echo $ret;
+          return $ret;
+
+        }
+
+    }
 
     // function to build acceptable array for select - why did not i maded as part of this function?!
     //function for uporedi opstine we will get stavka column of rashodi where group is something
@@ -176,7 +263,7 @@ class Prihodi extends CI_Model {
     }
 
 //********** Main get functions for Prihod / Rashod
-  function getPrihod($grad, $godina){
+    function getPrihod($grad, $godina){
       $this->db->where('grad', $grad);
       $this->db->where('godina', $godina);
       $this->db->order_by("grupa_prihoda");
@@ -189,6 +276,7 @@ class Prihodi extends CI_Model {
 
         die('Show Prihod Error!');
       }
+
     }
 
     function getRashod($grad, $godina){
@@ -206,7 +294,7 @@ class Prihodi extends CI_Model {
      }
    }
 
-  function sumGrupa($grad, $godina, $grupa){
+   function sumGrupa($grad, $godina, $grupa){
     //$this->db->select('ukupan_iznos');
     $this->db->where('grad', $grad);
     $this->db->where('godina', $godina);
@@ -230,6 +318,8 @@ class Prihodi extends CI_Model {
 
       die('Query sumGrupa ERROR ');
     }
+
+
 
    }
 
@@ -299,6 +389,10 @@ class Prihodi extends CI_Model {
             }else{
             die('Query Novosti ERRORR!');
             }
-        }
+
+
+
+
+    }
 
 }

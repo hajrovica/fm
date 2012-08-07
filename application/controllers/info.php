@@ -208,10 +208,10 @@ class Info extends MY_Controller {
           $this->view_data['godina_arr'] = $this->Prihodi->selectGodina('rashodi');
           //$this->view_data['grupa_arr'] = $this->Prihodi->selectGrupa('rashodi');
           $dat = $this->Prihodi->getStavka_Jq();
-          //print_r($dat);
+          print_r($dat);
           //echo $dat['dd'];
-          $this->view_data['grupa_arr'] = $dd = $this->Prihodi->getStavka_Jq();
-          //$this->view_data['grupa_arr'] = $dd = $dat['dd'];
+          // $this->view_data['grupa_arr'] = $dd = $this->Prihodi->getStavka_Jq();
+          $this->view_data['grupa_arr'] = $dd = $dat['dd'];
           $this->view_data['json'] = $dat['json'];
 
           $this->view_data['godina_cnt'] = count($this->view_data['godina_arr']);
