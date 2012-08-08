@@ -463,6 +463,7 @@ class Info extends MY_Controller {
 
                             //city ONE
 
+                            //do a check for a grad selection
                             $arr1 = $this->Prihodi->sumGrupa($grad, $godina, $stavka);
 
 
