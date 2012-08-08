@@ -414,7 +414,7 @@ class Info extends MY_Controller {
 
           $this->view_data['godina_arr'] = $this->Prihodi->selectGodina('rashodi');
 
-          $this->view_data['grupa_arr'] = $this->Prihodi->selectGrupa('rashodi');
+          //$this->view_data['grupa_arr'] = $this->Prihodi->selectGrupa('rashodi');
 
 
 
@@ -448,10 +448,10 @@ class Info extends MY_Controller {
 
             $godina = $this->input->post('godina');
 
-            $grupa = $this->input->post('grupa');
+            //$grupa = $this->input->post('grupa');
 
 
-            $this->view_data['stavka_arr'] = $this->Prihodi->getStavka($grupa);
+            $this->view_data['stavka_arr'] = $this->Prihodi->getStavka();
 
             if ($this->input->post('stavka')) {
 
@@ -459,54 +459,106 @@ class Info extends MY_Controller {
 
                             //so lets query db with selected values
 
-                          //  echo "STAVKA ARR IS DEFINED";
+                            //  echo "STAVKA ARR IS DEFINED";
 
                             //city ONE
 
                             //do a check for a grad selection
-                            $arr1 = $this->Prihodi->sumGrupa($grad, $godina, $stavka);
+                            //$arr1 = $this->Prihodi->sumGrupa($grad, $godina, $stavka);
+                            if (!($grad == 'none')) {
+                                  $arr1 = $this->Prihodi->sumGrupa($grad, $godina, $stavka);
+
+                                  //ok so lets get sum
+                                  $sum1 = array_sum($arr1);
+
+
+
+                                  //so lets send variables to view for our chart use
+
+                                  //cities - first :P
+                                  $this->view_data['grad1'] = $grad;
+
+
+                                  //Ok passing of formatted values for charts does not work (issue of . and , in number)
+                                  // so we are going back to original unformatted vals
+                                  $this->view_data['sum1'] = $sum1;
+
+
+                                   //so lets spit formatted sums just for fun of it
+                                  //$frmt_sum1 = number_format($sum1, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
+
+                            }else{
+                              $this->view_data['grad1'] = $grad;
+                              $this->view_data['sum1'] = 0;
+                            }
 
 
 
                             //city two
+                            if (!($grad2 == 'none')) {
 
-                            $arr2 = $this->Prihodi->sumGrupa($grad2, $godina, $stavka);
+                                  $arr2 = $this->Prihodi->sumGrupa($grad2, $godina, $stavka);
+
+                                  $sum2 = array_sum($arr2);
+
+                                  $this->view_data['grad2'] = $grad2;
+
+                                  $this->view_data['sum2'] = $sum2;
+
+                                  $frmt_sum2 = number_format($sum2, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
+
+
+
+
+                               }else{
+                              $this->view_data['grad2'] = $grad2;
+                              $this->view_data['sum2'] = 0;
+                            }
+
 
 
 
                             //city THREE
+                            if (!($grad3 == 'none')) {
+                                $arr3 = $this->Prihodi->sumGrupa($grad3, $godina, $stavka);
 
-                            $arr3 = $this->Prihodi->sumGrupa($grad3, $godina, $stavka);
+                                $sum3 = array_sum($arr3);
+
+                                $this->view_data['grad3'] = $grad3;
+
+                                $this->view_data['sum3'] = $sum3;
+
+                                $frmt_sum3 = number_format($sum3, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
 
 
+                              }else{
+                              $this->view_data['grad3'] = $grad3;
+                              $this->view_data['sum3'] = 0;
+                            }
 
                             //ok so lets get sums of those arrays
 
 
 
-                            $sum1 = array_sum($arr1);
+                            //$sum1 = array_sum($arr1);
 
-                            $sum2 = array_sum($arr2);
+                            // $sum2 = array_sum($arr2);
 
-                            $sum3 = array_sum($arr3);
+                            // $sum3 = array_sum($arr3);
 
 
 
 
 
                             //so lets send variables to view for our chart use
-
-
-
                             //cities - first :P
 
 
+                            //$this->view_data['grad1'] = $grad;
 
-                            $this->view_data['grad1'] = $grad;
+                            // $this->view_data['grad2'] = $grad2;
 
-                            $this->view_data['grad2'] = $grad2;
-
-                            $this->view_data['grad3'] = $grad3;
+                            // $this->view_data['grad3'] = $grad3;
 
 
 
@@ -516,11 +568,11 @@ class Info extends MY_Controller {
 
 
 
-                            $this->view_data['sum1'] = $sum1;
+                           // $this->view_data['sum1'] = $sum1;
 
-                            $this->view_data['sum2'] = $sum2;
+                            // $this->view_data['sum2'] = $sum2;
 
-                            $this->view_data['sum3'] = $sum3;
+                            // $this->view_data['sum3'] = $sum3;
 
 
 
@@ -534,11 +586,11 @@ class Info extends MY_Controller {
 
 
 
-                            $frmt_sum1 = number_format($sum1, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
+                           // $frmt_sum1 = number_format($sum1, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
 
-                            $frmt_sum2 = number_format($sum2, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
+                            // $frmt_sum2 = number_format($sum2, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
 
-                            $frmt_sum3 = number_format($sum3, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
+                            // $frmt_sum3 = number_format($sum3, $decimals = 2, $dec_point = '.',   $thousands_sep = ',');
 
 
 
@@ -574,7 +626,6 @@ class Info extends MY_Controller {
 
 
           //call view for this function
-
            $this->_outpt('info/uporedi');
 
          }

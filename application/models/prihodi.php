@@ -23,7 +23,7 @@ class Prihodi extends CI_Model {
     $arr = array();
 
     $grad = $this->getGrad($table);
-
+    $arr['none'] = 'opština/grad';
       foreach ($grad as $val => $value) {
         $arr[$value['grad']] = $value['grad'];
       }
@@ -214,12 +214,17 @@ class Prihodi extends CI_Model {
 
     // function to build acceptable array for select - why did not i maded as part of this function?!
     //function for uporedi opstine we will get stavka column of rashodi where group is something
-    function getStavka($group = null){
+    function getStavka(){
       //$group = 'TEKUĆI RASHODI';
 
       $this->db->select('stavka');
       $this->db->distinct();
-      $this->db->where('grupa_rashoda', $group);
+
+      // if (isset($group)) {
+      //   # code...
+
+      //   $this->db->where('grupa_rashoda', $group);
+      // }
 
 
       $query = $this->db->get('rashodi');

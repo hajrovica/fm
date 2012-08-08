@@ -46,9 +46,12 @@ HTML;
 
                 if (isset($grupa_arr)) {
 
-                    echo "<br><br><strong> Odaberite kategoriju rashoda za poređenje podataka: </strong><br>";
 
-                    echo form_dropdown('grupa', $grupa_arr);
+                        echo "<br><br><strong> Odaberite kategoriju rashoda za poređenje podataka: </strong><br>";
+
+                        echo form_dropdown('grupa', $grupa_arr);
+
+
 
                 }
 
