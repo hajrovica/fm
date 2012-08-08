@@ -411,21 +411,23 @@ jQuery(".sadrzaj").hide();
 
 
 
-             <tr>
+            <tr>
 
-            <td style="vertical-align:middle; text-align:center;">Nastavi istraživati</td>
+            <td>Nastavi istraživati</td>
 
             <td style="text-align:center;"> <?php echo anchor('info', $sml_pojmovi); ?></td>
-
-
-
-
-
-
 
             </tr>
 
 
+             <tr>
+
+            <td>Vidi tumačenje pojmova</td>
+
+            <td style="text-align:center;"> <?php echo anchor('pojmovi', $sml_pojmovi); ?></td>
+
+
+            </tr>
 
 
 

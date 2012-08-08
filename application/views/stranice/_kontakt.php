@@ -1,49 +1,98 @@
-
-                        <div style="text-align:center;">
-                            <h2 style="text-align:center;">Vaša poruka</h2>
-                        </div>
-
-
-                    <br />
-
-                    <form id="form1" class="stdform" method="post" action="">
-                        <p>
-                            <label>Ime *</label>
-                            <span class="field"><input type="text" name="name" id="name" class="longinput" /></span>
-                        </p>
-
-                        <!-- <p>
-                            <label>Last Name</label>
-                            <span class="field"><input type="text" name="lastname" id="lastname" class="longinput" /></span>
-                        </p> -->
-
-                        <p>
-                            <label>E-mail *</label>
-                            <span class="field"><input type="text" name="email" id="email" class="longinput" /></span>
-                        </p>
-
-                        <p>
-                            <label>Select *</label>
-                            <span class="field">
-                            <select name="kontakt">
-                                <option value="-">Izaberite kontakt</option>
-                                <option value="info">Generalne informacije</option>
-                                <option value="tim">Pitanje za članove tima</option>
-                            </select>
-                            </span>
-                        </p>
-
-                        <p>
-                            <label>Poruka *</label>
-                            <span class="field"><textarea cols="80" rows="5" name="poruka" class="mediuminput" id="poruka"></textarea></span>
-                            <div style="text-align:center;"> <button class="submit radius2">Pošalji</button></div>
-                        </p>
-
-
-                        <br />
-
-                        <p class="stdformbutton">
-
-                        </p>
-                    </form>
-                    <br clear="all" /><br />
+
+
+                        <div style="text-align:center;">
+
+                            <h2 style="text-align:center;">Vaša poruka</h2>
+
+                        </div>
+
+
+
+
+
+                    <br />
+
+
+
+                    <form id="form1" class="stdform" method="post" action="">
+
+                        <p>
+
+                            <label>Ime *</label>
+
+                            <span class="field"><input type="text" name="name" id="name" class="longinput" /></span>
+
+                        </p>
+
+
+
+                        <!-- <p>
+
+                            <label>Last Name</label>
+
+                            <span class="field"><input type="text" name="lastname" id="lastname" class="longinput" /></span>
+
+                        </p> -->
+
+
+
+                        <p>
+
+                            <label>E-mail *</label>
+
+                            <span class="field"><input type="text" name="email" id="email" class="longinput" /></span>
+
+                        </p>
+
+
+
+                        <p>
+
+                            <label>Izaberite *</label>
+
+                            <span class="field">
+
+                            <select name="kontakt">
+
+                                <option value="-"> - </option>
+
+                                <option value="info">Generalne informacije</option>
+
+                                <option value="tim">Pitanje za članove tima</option>
+
+                            </select>
+
+                            </span>
+
+                        </p>
+
+
+
+                        <p>
+
+                            <label>Poruka *</label>
+
+                            <span class="field"><textarea cols="80" rows="5" name="poruka" class="mediuminput" id="poruka"></textarea></span>
+
+                            <div style="text-align:center;"> <button class="submit radius2">Pošalji</button></div>
+
+                        </p>
+
+
+
+
+
+                        <br />
+
+
+
+                        <p class="stdformbutton">
+
+
+
+                        </p>
+
+                    </form>
+
+                    <br clear="all" /><br />
+

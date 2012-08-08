@@ -51,7 +51,7 @@
 
 
              echo anchor_popup('http://www.facebook.com/FiskalniMonitorBiH', $fb);
-             echo anchor_popup('#', $tw);
+             echo anchor_popup('https://twitter.com/FiskalniBiH', $tw);
              echo anchor('kontakt', $mail);
 
              ?>
