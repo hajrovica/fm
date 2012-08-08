@@ -416,7 +416,7 @@ class Info extends MY_Controller {
 
           //$this->view_data['grupa_arr'] = $this->Prihodi->selectGrupa('rashodi');
 
-
+          $this->view_data['stavka_arr'] = $this->Prihodi->getStavka();
 
 
 
@@ -451,7 +451,7 @@ class Info extends MY_Controller {
             //$grupa = $this->input->post('grupa');
 
 
-            $this->view_data['stavka_arr'] = $this->Prihodi->getStavka();
+
 
             if ($this->input->post('stavka')) {
 
