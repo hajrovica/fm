@@ -1,3 +1,44 @@
+<?php
+  if ($_POST) {
+    // dirty fix for grad as title on chart
+
+              if (isset($grad1)) {
+                # code...
+
+              $grad1 = (($grad1=='none')) ? null : $grad1 . ', ' ;
+              $grad2 = ($grad2=='none') ? null : $grad2 . ', ' ;
+              $grad3 = ($grad3=='none') ? null : $grad3 . ', ' ;
+              }
+
+            // if ($sum1==0 || $sum2==0 || $sum3==0) {
+              $alert = null;
+            // }
+            //$alert = '<div class="notification msgerror"><a class="close"></a><p>';
+
+            if (is_null($grad1)&&is_null($grad2)&&is_null($grad3)) {
+
+              $alert .= 'Selekcija grada/opštine nema vrijednosti. Molimo da selektujete miniminalno jedan grad/opštinu';
+            }
+
+
+            if ($sum1==0 && isset($grad1)) {
+              $alert .= "Opština/grad $grad1 nije dostavila podatke za odabrane budžetske stavke<br>";
+            }
+
+            if ($sum2==0 && isset($grad2)) {
+              $alert .= "Opština/grad $grad2 nije dostavila podatke za odabrane budžetske stavke<br>";
+            }
+
+            if ($sum3==0 && isset($grad3)) {
+              $alert .= "Opština/grad $grad3 nije dostavila podatke za odabrane budžetske stavke<br>";
+            }
+
+            //$alert .= '<br></p><p></p></div>';
+
+  }
+
+ ?>
+
 
 <style type="text/css">
 
@@ -373,24 +414,6 @@ jQuery(".sadrzaj").hide();
           if ($_POST) {
 
 
-              // dirty fix for grad as title on chart
-
-              if (isset($grad1)) {
-                # code...
-
-              $grad1 = (($grad1=='none')) ? ' ' : $grad1 . ', ' ;
-              $grad2 = ($grad2=='none') ? ' ' : $grad2 . ', ' ;
-              $grad3 = ($grad3=='none') ? ' ' : $grad3 . ', ' ;
-              }
-
-
-
-
-
-
-
-
-
    ?>
 
 
@@ -601,7 +624,11 @@ chart2 = new Highcharts.Chart({
 
             },
 
-                series: [{
+                series: [
+                    <?php
+                    if (isset($grad1)) { ?>
+
+              {
 
                 name: '<?php echo $grad1; ?>',
 
@@ -639,7 +666,11 @@ chart2 = new Highcharts.Chart({
 
 
 
-            }, {
+            }, <?php }; ?>
+
+            <?php if (isset($grad2)) { ?>
+
+                {
 
                 name: '<?php echo $grad2; ?>',
 
@@ -677,7 +708,13 @@ chart2 = new Highcharts.Chart({
 
 
 
-            }, {
+            },
+            <?php }; ?>
+
+
+            <?php if (isset($grad3)) { ?>
+
+            {
 
                 name: '<?php echo $grad3; ?>',
 
@@ -715,7 +752,8 @@ chart2 = new Highcharts.Chart({
 
 
 
-            }]
+            } <?php }; ?>
+            ]
 
         });
 

@@ -40,6 +40,7 @@ HTML;
 
 
 
+
                 //go to new line in form  - view issue
 
 
@@ -53,11 +54,13 @@ HTML;
 
 
 
+
+
                 }
 
                 if (isset($stavka_arr)) {
 
-                    echo "<br><strong>Odaberite stavku rashoda za poređenje podataka: </strong><br>";
+                    echo "<br><br><strong>Odaberite stavku rashoda za poređenje podataka: </strong><br><br>";
 
                     echo form_dropdown('stavka', $stavka_arr);
 
@@ -101,9 +104,12 @@ HTML;
 
                 <?php endif ?><button class="submit radius2">Prikaži</button>
 
+            <?php
+            $this->load->helper('html');
+            echo "<br>" . nbs(3) . "<i>Po stanovniku</i><br>";
+            echo form_close();
 
-
-            <?php echo form_close(); ?>
+            ?>
 
 
 

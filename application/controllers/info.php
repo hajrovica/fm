@@ -17,9 +17,6 @@ class Info extends MY_Controller {
       $this->load->model('Prihodi');
 
 
-
-
-
    }
 
 
@@ -489,7 +486,7 @@ class Info extends MY_Controller {
 
                             }else{
                               $this->view_data['grad1'] = $grad;
-                              $this->view_data['sum1'] = 0;
+                              $this->view_data['sum1'] = null;
                             }
 
 
@@ -512,7 +509,7 @@ class Info extends MY_Controller {
 
                                }else{
                               $this->view_data['grad2'] = $grad2;
-                              $this->view_data['sum2'] = 0;
+                              $this->view_data['sum2'] = null;
                             }
 
 
@@ -533,7 +530,7 @@ class Info extends MY_Controller {
 
                               }else{
                               $this->view_data['grad3'] = $grad3;
-                              $this->view_data['sum3'] = 0;
+                              $this->view_data['sum3'] = null;
                             }
 
                             //ok so lets get sums of those arrays
