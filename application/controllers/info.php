@@ -637,7 +637,8 @@ class Info extends MY_Controller {
 
           $this->view_data['godina_arr'] = $this->Prihodi->selectGodina('rashodi');
 
-          $this->view_data['grupa_arr'] = $this->Prihodi->selectGrupa('rashodi');
+          //$this->view_data['grupa_arr'] = $this->Prihodi->selectGrupa('rashodi');
+          $this->view_data['grupa_arr'] = $this->Prihodi->getStavka();
 
           $this->view_data['godina_cnt'] = count($this->view_data['godina_arr']);
 

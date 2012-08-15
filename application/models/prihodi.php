@@ -346,7 +346,13 @@ class Prihodi extends CI_Model {
     //$this->db->select('ukupan_iznos');
     //$this->db->where('grad', $grad);
     $this->db->where('godina', $godina);
-    $this->db->where('grupa_rashoda', $grupa);
+
+    $this->db->where('stavka', $grupa);
+
+
+    //Old parametar where we looked bz grupa
+    //$this->db->where('grupa_rashoda', $grupa);
+
     $this->db->order_by('grad');
 
 
